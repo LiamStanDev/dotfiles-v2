@@ -1,9 +1,12 @@
-source "$HOME/.config/zsh/enviroment.zsh"
+# Environment variable (use Hyprland env instead)
+#source "$HOME/.config/zsh/enviroment.zsh"
+
 # nvim
 export PATH="$HOME/.local/nvim-linux64/bin:$PATH"
 # miniconda
 export PATH="$HOME/.local/miniconda3/bin:$PATH"
 
+export CONDA_AUTO_ACTIVATE_BASE=true
 # >>> conda initialize >>>
 # !! contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/liam/.local/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
