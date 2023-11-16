@@ -1,0 +1,60 @@
+{
+    // General Settings
+    "layer": "top",
+    "margin-top": 14,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,    
+    "height": 16,
+    "spacing": 0,
+
+    // Load Modules
+    "include": ["~/dotfiles/waybar/modules"],
+
+    // Left
+    "modules-left": [
+        "custom/appmenu",
+        "wlr/taskbar",
+        "group/quicklinks",
+        "hyprland/window"
+    ],
+
+    // Center
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+
+    // Right    
+    "modules-right": [
+        "tray"
+        "pulseaudio",
+        "bluetooth",
+        "battery", 
+        "group/hardware",
+        "network",
+        "custom/exit",
+        "clock"
+    ],
+
+    // Group
+    "group/quicklinks": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/filemanager",
+            "custom/browser",
+            "custom/chatgpt",
+            "custom/calculator"
+            "custom/windowsvm"
+         ]
+    },
+
+    // Group Hardware
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "disk",
+            "cpu",
+            "memory"
+        ]
+    }
+}
