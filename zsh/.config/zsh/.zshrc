@@ -18,9 +18,3 @@ plug "zsh-users/zsh-syntax-highlighting"
 
 # for specific app
 source "$HOME/.config/zsh/dotnet-setup.zsh"
-
-# auto show
-# neofetch
-
-
-

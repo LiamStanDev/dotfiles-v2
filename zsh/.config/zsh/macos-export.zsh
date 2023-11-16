@@ -12,6 +12,7 @@ export PATH="$HOME/.local/nvim-macos/bin:$PATH"
 # miniconda
 export PATH="$HOME/.local/miniconda3/bin:$PATH"
 
+export CONDA_AUTO_ACTIVATE_BASE=true
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/lindazhong/.local/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
