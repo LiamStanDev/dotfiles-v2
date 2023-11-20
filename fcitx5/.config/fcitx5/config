@@ -3,11 +3,10 @@
 TriggerKeys=
 # Enumerate when press trigger key repeatedly
 EnumerateWithTriggerKeys=True
+# Temporally switch between first and current Input Method
+AltTriggerKeys=
 # Skip first input method while enumerating
 EnumerateSkipFirst=False
-
-[Hotkey/AltTriggerKeys]
-0=Shift+Shift_L
 
 [Hotkey/EnumerateForwardKeys]
 0=Control+Shift+Shift_L

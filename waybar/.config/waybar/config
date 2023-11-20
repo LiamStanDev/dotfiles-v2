@@ -9,7 +9,7 @@
     "spacing": 0,
 
     // Load Modules
-    "include": ["~/dotfiles/waybar/modules"],
+    "include": ["~/.config/waybar/modules"],
 
     // Left
     "modules-left": [
@@ -26,7 +26,7 @@
 
     // Right    
     "modules-right": [
-        "tray"
+        "tray",
         "pulseaudio",
         "bluetooth",
         "battery", 
@@ -43,7 +43,7 @@
             "custom/filemanager",
             "custom/browser",
             "custom/chatgpt",
-            "custom/calculator"
+            "custom/calculator",
             "custom/windowsvm"
          ]
     },

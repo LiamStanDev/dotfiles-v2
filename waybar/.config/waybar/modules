@@ -112,7 +112,7 @@
   // Power Menu
   "custom/exit": {
     "format": "",
-    "on-click": "wlogout --protocol layer-shell -b 5 -T 400 -B 400"
+    "on-click": "wlogout --protocol layer-shell -b 5 -T 400 -B 400",
     "tooltip": false
   },
 

@@ -74,7 +74,7 @@ return {
 		config = require("editor.treesitter"),
 		dependencies = {
 			-- { "p00f/nvim-ts-rainbow" }, -- rainbow brasket for treesitter extension
-			{ "JoosepAlviste/nvim-ts-context-commentstring" },
+			-- { "JoosepAlviste/nvim-ts-context-commentstring" },
 			{ "windwp/nvim-ts-autotag", config = require("editor.autotag") },
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
