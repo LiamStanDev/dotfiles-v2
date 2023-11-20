@@ -1,5 +1,5 @@
 window {
-  font-family: monospace;
+  font-family: "Caskaydia Cove Nerd Font";
   font-size: 14pt;
   color: #cdd6f4; /* text */
   background-color: rgba(30, 30, 46, 0.5);
@@ -12,7 +12,9 @@ button {
   border: none;
   background-color: rgba(30, 30, 46, 0);
   margin: 5px;
-  transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition:
+    box-shadow 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
 }
 
 button:hover {

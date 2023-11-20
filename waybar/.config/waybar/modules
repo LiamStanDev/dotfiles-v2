@@ -66,24 +66,17 @@
     "tooltip": false
   },
 
-  // Brave Launcher
-  "custom/brave": {
-    "format": "",
-    "on-click": "brave",
-    "tooltip": false
-  },
-
   // Browser Launcher
   "custom/browser": {
     "format": "",
-    "on-click": "chromium",
+    "on-click": "firefox",
     "tooltip": false
   },
 
   // ChatGPT Launcher
   "custom/chatgpt": {
     "format": "",
-    "on-click": "brave --app=https://chat.openai.com",
+    "on-click": "firefox --new-window=https://chat.openai.com",
     "tooltip": false
   },
 
@@ -142,20 +135,20 @@
 
   // CPU
   "cpu": {
-    "format": "/ C {usage}% ",
+    "format": "/     {usage}% ",
     "on-click": "kitty -e btop"
   },
 
   // Memory
   "memory": {
-    "format": "/ M {}% ",
+    "format": "/     {}% ",
     "on-click": "kitty -e btop"
   },
 
   // Harddisc space used
   "disk": {
     "interval": 30,
-    "format": "   {percentage_used}% ",
+    "format": "    {percentage_used}% ",
     "path": "/",
     "on-click": "kitty -e btop"
   },
@@ -193,7 +186,7 @@
   // Pulseaudio
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{icon} {volume}%",
+    "format": "{volume} {icon} %",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
@@ -208,13 +201,14 @@
       "car": "",
       "default": ["", " ", " "]
     },
-    "on-click": "pavucontrol"
+    //"on-click": "pavucontrol"
+    "on-click": "kitty -e pacmixer"
   },
 
   // Bluetooth
   "bluetooth": {
-    "format-disabled": "",
-    "format-off": "",
+    "format-off": "{icon}",
+    "format-disabled": "{icon}",
     "interval": 30,
     "on-click": "blueman-manager"
   },
