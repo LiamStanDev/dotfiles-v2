@@ -1,9 +1,9 @@
 -- the core plugins
 local config = require("core")
 
--- ----------------------------------------------------- 
+-- -----------------------------------------------------
 -- Register server
--- ----------------------------------------------------- 
+-- -----------------------------------------------------
 -- tree-sitter code highlight
 config.code_hight_servers = {
 	"json",
@@ -43,7 +43,7 @@ config.lsp_servers = { -- see https://github.com/williamboman/mason-lspconfig.nv
 	"omnisharp",
 	"rust_analyzer",
 	-- "prismals",
-	"gopls",
+	--"gopls",
 	"clangd",
 }
 
@@ -68,10 +68,9 @@ config.dap_servers = {
 	"delve", -- go
 }
 
-
--- ----------------------------------------------------- 
+-- -----------------------------------------------------
 -- Others
--- ----------------------------------------------------- 
+-- -----------------------------------------------------
 -- set color theme here
 config.colorscheme = "onedark"
 
