@@ -1,0 +1,17 @@
+qemu-system-x86_64 \
+  -machine q35 \
+  -m 8192 \
+  -cpu host \
+  -smp cores=4 \
+  -drive file=/home/liam/Documents/virtual-machine/windows11.qcow2,format=qcow2,if=virtio,cache=writeback \
+  -enable-kvm \
+  -vga qxl \
+  -netdev user,id=net0 \
+  -device e1000,netdev=net0 \
+  -device virtio-mouse-pci
+
+  -device virtio-net-pci,netdev=net0 \
+  -vga virtio \
+
+  -drive file=/home/liam/Documents/virtual-machine/virtio-win-0.1.240.iso,media=cdrom \
+  -cdrom /home/liam/Documents/virtual-machine/windows10_zh-cn.iso \

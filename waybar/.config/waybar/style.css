@@ -394,6 +394,18 @@ window#waybar.empty #window {
 }
 
 /* -----------------------------------------------------
+ * Backlight
+ * ----------------------------------------------------- */
+#backlight {
+  background-color: @backgroundlight;
+  font-size: 16px;
+  color: @textcolor2;
+  border-radius: 15px;
+  padding: 2px 15px 0px 10px;
+  margin: 5px 15px 5px 0px;
+  opacity: 0.8;
+}
+/* -----------------------------------------------------
  * Tray
  * ----------------------------------------------------- */
 
@@ -419,9 +431,9 @@ label:focus {
   background-color: #000000;
 }
 
-#backlight {
-  background-color: #90b1b1;
-}
+/* #backlight { */
+/*   background-color: #90b1b1; */
+/* } */
 
 #network {
   background-color: #2980b9;

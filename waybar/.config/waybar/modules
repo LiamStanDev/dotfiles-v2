@@ -68,7 +68,7 @@
 
   // Browser Launcher
   "custom/browser": {
-    "format": "",
+    "format": "",
     "on-click": "firefox",
     "tooltip": false
   },
@@ -90,7 +90,7 @@
   // Windows VM
   "custom/windowsvm": {
     "format": "",
-    "on-click": "~/.config/scripts/launchvm.sh",
+    "on-click": "source ~/.config/zsh/scripts/launchvm.sh",
     "tooltip": false
   },
 
@@ -135,7 +135,7 @@
 
   // CPU
   "cpu": {
-    "format": "/     {usage}% ",
+    "format": "    {usage}% ",
     "on-click": "kitty -e btop"
   },
 
@@ -183,14 +183,21 @@
     "format-icons": [" ", " ", " ", " ", " "]
   },
 
+  "backlight": {
+      "device": "intel_backlight",
+      "format": "{icon}   {percent}%",
+      "format-icons": ["", "󰖨"],
+      "scroll-step": 5
+  },
+
   // Pulseaudio
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{volume} {icon} %",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
+    "format": "{icon}  {volume}%",
+    //"format-bluetooth": "{icon} {volume}%",
+    //"format-bluetooth-muted": " {icon} ",
+    "format-muted": " ",
+    "format-source": "   {volume}% ",
     "format-source-muted": "",
     "format-icons": {
       "headphone": "",

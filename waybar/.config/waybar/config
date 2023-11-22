@@ -15,8 +15,9 @@
     "modules-left": [
         "custom/appmenu",
         "wlr/taskbar",
-        "group/quicklinks",
-        "hyprland/window"
+        "group/quicklinks"
+        // "hyprland/window"
+
     ],
 
     // Center
@@ -28,7 +29,8 @@
     "modules-right": [
         "tray",
         "pulseaudio",
-        //"bluetooth",
+        "bluetooth",
+        "backlight",
         "battery", 
         "group/hardware",
         "network",
@@ -52,7 +54,7 @@
     "group/hardware": {
         "orientation": "horizontal",
         "modules": [
-            "disk",
+            //"disk",
             "cpu",
             "memory"
         ]
