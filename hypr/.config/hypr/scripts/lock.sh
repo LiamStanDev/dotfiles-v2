@@ -1,7 +1,7 @@
 #!/bin/bash
 
-timeswaylock=600
-timeoff=660
+timeswaylock=300
+timeoff=330
 
 if [ -f "/usr/bin/swayidle" ]; then
     echo "swayidle is installed."
