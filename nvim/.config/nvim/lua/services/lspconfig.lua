@@ -58,12 +58,7 @@ return function()
 		end, { silent = true, noremap = true, desc = "toggle signature" })
 
 		-- remove server formatter
-		local server_builtin_formatter_needed = {
-			"lemminx",
-			"omnisharp",
-			"rust_analyzer",
-		}
-		if not server_builtin_formatter_needed[client.name] then
+		if client.name ~= "omnisharp" and client.name ~= "rust_analyzer" and client.name ~= "lemminx" then
 			client.server_capabilities.documentFormattingProvider = false
 			client.server_capabilities.documentRangeFormattingProvider = false
 			-- client.resolved_capabilities.document_formatting = false -- Note: the following make semantic token very wier Do use!!!
