@@ -3,6 +3,7 @@ local config = {}
 
 config.enable_wayland = true
 config.enable_tab_bar = false
+config.window_close_confirmation = "NeverPrompt"
 config.automatically_reload_config = true
 config.window_background_opacity = 0.5
 config.text_background_opacity = 1.0

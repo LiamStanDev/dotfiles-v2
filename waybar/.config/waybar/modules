@@ -208,8 +208,8 @@
       "car": "",
       "default": ["", " ", " "]
     },
-    //"on-click": "pavucontrol"
-    "on-click": "kitty -e pacmixer"
+    "on-click": "pkill pavucontrol || pavucontrol"
+    //"on-click": "kitty -e pacmixer"
   },
 
   // Bluetooth
@@ -217,7 +217,7 @@
     "format-off": "{icon}",
     "format-disabled": "{icon}",
     "interval": 30,
-    "on-click": "blueman-manager"
+    "on-click": "pkill blueman-manager || blueman-manager"
   },
 
   // Other
