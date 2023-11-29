@@ -8,6 +8,7 @@ config.automatically_reload_config = true
 config.window_background_opacity = 0.5
 config.text_background_opacity = 1.0
 
+config.font_size = 11
 config.font = wezterm.font_with_fallback({
 	"Comic Mono",
 	"CaskaydiaCove Nerd Font",
