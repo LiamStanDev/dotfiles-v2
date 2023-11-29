@@ -34,6 +34,30 @@ return function()
 		-- 	opts
 		-- )
 
+		local keymap = vim.keymap.set
+		-- C-t: go back
+		keymap("n", "gD", "<cmd>Lspsaga peek_definition<CR>")
+		-- Go to definition
+		keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
+		if client.name == "omnisharp" then
+			keymap("n", "gd", "<cmd>lua require('omnisharp_extended').lsp_definitions()<cr>")
+		end
+
+		keymap("n", "gf", "<cmd>Lspsaga lsp_finder<CR>")
+		-- Peek type definition
+		-- You can edit the file containing the type definition in the floating window
+		-- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
+		-- It also supports tagstack
+		-- Use <C-t> to jump back
+		keymap("n", "gT", "<cmd>Lspsaga peek_type_definition<CR>")
+		keymap("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
+		keymap("n", "gl", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
+		keymap("n", "gb", "<cmd>Lspsaga show_buf_diagnostics<CR>")
+		keymap("n", "gh", "<cmd>Lspsaga hover_doc<CR>")
+		-- keymap("n", "gr", "<cmd>Lspsaga rename ++project<CR>")
+		-- Go to type definition
+		-- keymap("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
+
 		-- Format
 		vim.cmd([[command! Format execute "lua vim.lsp.buf.format({ async = true })" ]]) -- Format command
 		-- formatting before save
@@ -89,6 +113,14 @@ return function()
 				"additionalTextEdits",
 			},
 		},
+	}
+
+	-- nvim-ufo
+	-- Tell the server the capability of foldingRange,
+	-- Neovim hasn't added foldingRange to default capabilities, users must add it manually
+	capabilities.textDocument.foldingRange = {
+		dynamicRegistration = false,
+		lineFoldingOnly = true,
 	}
 
 	-- auto register lsp service

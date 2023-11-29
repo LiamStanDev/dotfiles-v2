@@ -82,4 +82,12 @@ return {
 
 	-- navigator with tmux
 	"christoomey/vim-tmux-navigator",
+
+	-- code folding
+	{
+		"kevinhwang91/nvim-ufo",
+		config = require("editor.nvim-ufo"),
+		event = { "BufReadPost", "BufNewFile" },
+		dependencies = { "kevinhwang91/promise-async" },
+	},
 }
