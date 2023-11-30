@@ -59,11 +59,11 @@ return function()
 		-- keymap("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
 
 		-- Format
-		vim.cmd([[command! Format execute "lua vim.lsp.buf.format({ async = true })" ]]) -- Format command
+		-- vim.cmd([[command! Format execute "lua vim.lsp.buf.format({ async = true })" ]]) -- Format command
 		-- formatting before save
-		if client.name ~= "rust_analyzer" then
-			vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
-		end
+		-- if client.name ~= "rust_analyzer" then
+		-- 	vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
+		-- end
 
 		-- add some plugin
 		require("lsp-inlayhints").on_attach(client, bufnr)

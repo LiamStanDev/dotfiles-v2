@@ -48,15 +48,37 @@ config.lsp_servers = { -- see https://github.com/williamboman/mason-lspconfig.nv
 }
 
 -- formatting and diagnostics server
-config.null_ls_servers = {
-	"prettier",
-	"black", -- python formatter
-	"stylua", -- lua formatter
-	"beautysh", -- bash formatter
-	"eslint_d",
-	-- "prismaFmt",
-	"gofmt",
-	"clang_format",
+-- config.formatter_services = {
+-- 	"prettier",
+-- 	"black", -- python formatter
+-- 	"stylua", -- lua formatter
+-- 	"beautysh", -- bash formatter
+-- 	"eslint_d",
+-- 	-- "prismaFmt",
+-- 	"gofmt",
+-- 	"clang_format",
+-- }
+
+config.formatter_services = {
+	lua = { "stylua" },
+	-- Conform will run multiple formatters sequentially
+	python = { "isort", "black" },
+	-- Use a sub-list to run only the first available formatter
+	javascript = { { "prettierd", "prettier" } },
+	typescript = { { "prettierd", "prettier" } },
+	typescriptreact = { { "prettierd", "prettier" } },
+	go = { "gofmt" },
+	cpp = { "clang_format" },
+	bash = { "beautysh" },
+	zsh = { "beautysh" },
+	shell = { "beautysh" },
+}
+
+config.linting_services = {
+	javascript = { "eslint_d" },
+	javascriptreact = { "eslint_d" },
+	typescript = { "eslint_d" },
+	typescriptreact = { "eslint_d" },
 }
 
 -- debuger server

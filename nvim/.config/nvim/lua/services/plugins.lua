@@ -24,15 +24,28 @@ return {
 	{ "Hoffs/omnisharp-extended-lsp.nvim", event = "LspAttach" }, -- for decompile csharp
 
 	-- formatting & linting
+	-- {
+	-- 	"nvimtools/none-ls.nvim",
+	-- 	event = { "BufReadPost", "BufNewFile" },
+	-- 	dependencies = {
+	-- 		"jay-babu/mason-null-ls.nvim",
+	-- 	},
+	-- 	config = require("services.none-ls"),
+	-- },
+	-- formatting
 	{
-		"nvimtools/none-ls.nvim",
+		"stevearc/conform.nvim",
 		event = { "BufReadPost", "BufNewFile" },
-		dependencies = {
-			"jay-babu/mason-null-ls.nvim",
-		},
-		config = require("services.none-ls"),
+		opts = {},
+		config = require("services.conform-nvim"),
 	},
 
+	-- linting
+	{
+		"mfussenegger/nvim-lint",
+		event = { "BufReadPost", "BufNewFile" },
+		config = require("services.lint-nvim"),
+	},
 	-- dap
 	{
 		"mfussenegger/nvim-dap",
