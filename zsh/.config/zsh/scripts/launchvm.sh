@@ -8,4 +8,5 @@ qemu-system-x86_64 \
     -vga qxl \
     -netdev user,id=net0 \
     -device e1000,netdev=net0 \
+    -usbdevice tablet \
     -device virtio-mouse-pci \
