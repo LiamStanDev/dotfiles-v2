@@ -20,9 +20,9 @@ return function()
 			min_width = 30,
 			force_max_height = false,
 			keys = {
-				expand_or_jump = "<CR>",
+				toggle_or_open = "<CR>",
 				vsplit = "v",
-				split = "i",
+				split = "s",
 				tabe = "t",
 				tabnew = "r",
 				quit = { "<C-c>", "q" },
@@ -50,7 +50,7 @@ return function()
 			auto_close = true,
 			custom_sort = nil,
 			keys = {
-				expand_or_jump = "<CR>",
+				toggle_or_jump = "<CR>",
 				quit = "<C-c>",
 			},
 		},
@@ -71,6 +71,7 @@ return function()
 			mark = "<TAB>",
 			confirm = "<CR>",
 			in_select = true,
+			auto_save = true,
 		},
 		lightbulb = {
 			enable = false,
