@@ -6,6 +6,7 @@ return function()
 	telescope.setup({
 		defaults = {
 			mappings = {
+				-- ctrl + v will open in vsplit
 				i = {
 					["<C-j>"] = actions.move_selection_next,
 					["<C-k>"] = actions.move_selection_previous,
