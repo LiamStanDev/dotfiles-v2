@@ -1,7 +1,7 @@
 return function()
-	vim.o.foldcolumn = "5" -- '0' is not bad
-	vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-	vim.o.foldlevelstart = 3
+	vim.o.foldcolumn = "0" -- '0' is not bad
+	vim.o.foldlevel = 10 -- Using ufo provider need a large value, feel free to decrease the value
+	vim.o.foldlevelstart = 100
 	vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 	vim.o.foldenable = true
 

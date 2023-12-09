@@ -19,7 +19,7 @@ config.colors = {
 	foreground = "#98b0d3",
 	background = "#14151e",
 
-	cursor_bg = "#abb2bf",
+	cursor_bg = "#e5c07b",
 	cursor_fg = "black",
 	cursor_border = "#abb2bf",
 
