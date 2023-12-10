@@ -48,10 +48,11 @@ local M = {
 		},
 		lualine_x = {
 			component.diagnostics,
-			component.lsp_progess,
+			-- component.lsp_progess,
+			component.lsp,
 			{
 				function()
-                    return "󱞩"
+					return "󱞩"
 					-- return "﬌"
 				end,
 				separator = { left = "", right = "" },

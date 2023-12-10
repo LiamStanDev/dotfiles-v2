@@ -18,7 +18,7 @@ local component = {
 	},
 	lsp = {
 		function()
-			local msg = "[Inactive]"
+			local msg = "Inactive"
 			local buf_ft = vim.api.nvim_buf_get_option(0, "filetype") -- get buffer filetype: string type
 			local clients = vim.lsp.get_active_clients()
 			if next(clients) == nil then
@@ -36,35 +36,27 @@ local component = {
 			local copilot_activate = false
 			-- add lsp
 			for _, lsp_server_name in ipairs(lsp_server_names) do
-				if lsp_server_name ~= "null-ls" and lsp_server_name ~= "copilot" then
+				if lsp_server_name ~= "copilot" then
 					table.insert(client_names, lsp_server_name)
 				end
 				if lsp_server_name == "copilot" then
 					copilot_activate = true
 				end
 			end
-			-- the following is very hard
-			-- add formatter
-			-- local active_formatters = require("null-ls.services").list_registered_providers_names(buf_ft)
-			--          vim.list_extend(client_names, active_formatters)
-			-- add linter
-			-- local activate_linters = require("null-ls")
-			-- for _, linter_name in ipairs(activate_linters) do
-			-- 	table.insert(client_names, linter_name)
-			-- end
-			-- client_names = make_unique_list(client_names)
-			-- if next(client_names) ~= nil then
+
 			if #client_names ~= 0 then
-				msg = "[" .. table.concat(client_names, ", ") .. "]"
+				msg = " " .. table.concat(client_names, ", ") .. ""
+				-- msg = "[" .. table.concat(client_names, ", ") .. "]"
 			end
 			if copilot_activate then
 				msg = msg .. "%#SLCopilot#" .. " " .. "" .. "%*"
 			end
 			return msg
 		end,
-		icon = "",
+		-- icon = "",
 		color = { gui = "bold" },
 	},
+	-- deprecated
 	lsp_progess = {
 		function()
 			local msg = "Inactive"
@@ -79,12 +71,6 @@ local component = {
 			local buf_ft = vim.bo.filetype
 			local buf_client_names = {}
 			local copilot_active = false
-			local null_ls = require("null-ls")
-			local alternative_methods = {
-				null_ls.methods.DIAGNOSTICS,
-				null_ls.methods.DIAGNOSTICS_ON_OPEN,
-				null_ls.methods.DIAGNOSTICS_ON_SAVE,
-			}
 
 			-- add client
 			for _, client in pairs(buf_clients) do
