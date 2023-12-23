@@ -24,6 +24,13 @@ return {
 		config = require("tools.inline-hint"),
 	},
 
+	-- todo comment
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = require("tools.todo-comment"),
+	},
+
 	-- AI
 	-- {
 	-- 	"jackMort/ChatGPT.nvim",

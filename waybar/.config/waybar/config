@@ -15,9 +15,9 @@
     "modules-left": [
         "custom/appmenu",
         "wlr/taskbar",
-        "group/quicklinks"
+        "group/quicklinks",
         // "hyprland/window"
-
+        "group/hardware"
     ],
 
     // Center
@@ -32,7 +32,6 @@
         "bluetooth",
         "backlight",
         "battery", 
-        "group/hardware",
         "network",
         "custom/exit",
         "clock"
@@ -54,9 +53,9 @@
     "group/hardware": {
         "orientation": "horizontal",
         "modules": [
-            //"disk",
             "cpu",
-            "memory"
+            "memory",
+            "disk"
         ]
     }
 }

@@ -133,7 +133,7 @@ return function()
 				"Git Diff Close",
 			},
 			b = {
-				"<cmd>Telecope git_bcommit<cr>",
+				"<cmd>Telecope git_bcommits<cr>",
 				"Back to Commit",
 			},
 			j = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = true})<cr>", "Next Hunk" },
@@ -175,7 +175,7 @@ return function()
 				end,
 				"Prev Error",
 			},
-			w = { "<cmd>Trouble<CR>", "Workspace Diagnostics" },
+			w = { "<cmd>Trouble<CR>", "Trouble" },
 			-- l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 			-- q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 			-- r = { "<cmd>Lspsaga rename ++project<CR>", "Rename" }, -- ++project still won't fix. see: https://github.com/nvimdev/lspsaga.nvim/issues/726
@@ -188,6 +188,7 @@ return function()
 
 			e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
 			o = { "<cmd>Lspsaga outline<CR>", "Outline" },
+			t = { "<cmd>TodoTrouble<CR>", "TODO" },
 		},
 		s = {
 			name = "Search",

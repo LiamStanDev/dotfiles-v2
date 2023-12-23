@@ -54,5 +54,6 @@ export PATH="$PATH:$GOROOT/bin:$HOME/go/bin"
 export RISCV="$HOME/.local/riscv"
 export PATH="$PATH:$RISCV/tools/bin:$RISCV/qemu/bin"
 
-# secret api keys
-plug "$HOME/.config/zsh/api-keys.zsh"
+# fly.io
+export FLYCTL_INSTALL="$HOME/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"

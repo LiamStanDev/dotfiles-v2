@@ -36,9 +36,37 @@
   },
   "Class": {
     "prefix": "class",
-    "body": ["class ${1:Name}", "{", "    $0", "}"],
+    "body": [
+      "class ${1:Name}",
+      "{",
+      "    $0",
+      "}"],
     "description": "Class"
   },
+
+
+  "Public Class": {
+    "prefix": "pc",
+    "body": [
+      "public class ${1:${TM_FILENAME_BASE}}", 
+      "{", 
+      "    $0", "}"
+    ],
+    "description": "Class"
+  },
+
+
+
+  "Pulic Static Class" : {
+    "prefix": "psc",
+    "body": [
+      "public static class ${1:${TM_FILENAME_BASE}}",
+      "{",
+      "    $0",
+      "}"
+    ]
+  },
+
   "Console.WriteLine": {
     "prefix": "cw",
     "body": ["Console.WriteLine($1);"],
@@ -245,8 +273,11 @@
     "description": "MessageBox.Show"
   },
   "Namespace": {
-    "prefix": "namespace",
-    "body": ["namespace ${1:Name}", "{", "    $0", "}"],
+    "prefix": "ns",
+    "body": [
+      "namespace ${1:${TM_DIRECTORY/.*\\/(.*)$/$1/g}};",
+      "$0"
+    ],
     "description": "Namespace"
   },
   "#if": {

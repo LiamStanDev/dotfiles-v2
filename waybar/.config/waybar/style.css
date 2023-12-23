@@ -33,19 +33,19 @@
  * General 
  * ----------------------------------------------------- */
 * {
-  font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
+  font-family: Roboto, Helvetica, Arial,
     sans-serif;
   border: none;
   border-radius: 3px;
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #272724;
   border-bottom: 0px solid #ffffff;
   color: #ffffff;
-  background: transparent;
-  transition-property: background-color;
-  transition-duration: 0.5s;
+  /* background: transparent; */
+  /* transition-property: background-color; */
+  /* transition-duration: 0.5s; */
 }
 
 /* -----------------------------------------------------
@@ -195,14 +195,19 @@ window#waybar.empty #window {
 
 #custom-appmenu,
 #custom-appmenuwlr {
-  background-color: @backgrounddark;
-  font-size: 16px;
-  color: @textcolor1;
-  border-radius: 15px;
-  padding: 0px 10px 0px 10px;
+  /* background-color: @backgrounddark; */
+  /* font-size: 16px; */
+  /* color: @textcolor1; */
+  /* border-radius: 15px; */
+  /* padding: 0px 10px 0px 10px; */
   margin: 3px 15px 3px 14px;
+  /* opacity: 0.8; */
+  /* border: 3px solid @bordercolor; */
+  margin-right: 20px;
+  font-size: 22px;
+  font-weight: bold;
   opacity: 0.8;
-  border: 3px solid @bordercolor;
+  color: #1793D1;
 }
 
 /* -----------------------------------------------------
@@ -272,8 +277,8 @@ window#waybar.empty #window {
   color: @iconcolor;
 }
 
-#memory {
-  margin-right: 10px;
+#cpu {
+  margin-left: 1rem;
 }
 
 /* -----------------------------------------------------
@@ -281,9 +286,10 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #clock {
-  background-color: @backgrounddark;
+  /* background-color: @backgrounddark; */
   font-size: 16px;
-  color: @textcolor1;
+  font-weight: bold;
+  color: @textcolor2;
   border-radius: 15px;
   padding: 1px 10px 0px 10px;
   margin: 3px 15px 3px 0px;
@@ -411,7 +417,11 @@ window#waybar.empty #window {
 
 #tray {
   /* background-color: #2980b9; */
-  margin-right: 20px;
+  margin: 3px 15px 3px 1rem;
+  padding: 2px 15px 0px 10px;
+  border-radius: 15px;
+  opacity: 0.8;
+  /* border: 3px solid @backgroundlight; */
 }
 
 #tray > .passive {

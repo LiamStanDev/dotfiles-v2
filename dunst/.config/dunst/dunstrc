@@ -24,10 +24,10 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = (111, 444)
+    width = (0, 444)
 
     # The maximum height of a single notification, excluding the frame.
-    height = 222
+    height = 444
 
     # Position the notification in the top right corner
     origin = top-right
@@ -110,7 +110,8 @@
 
     ### Text ###
 
-    font = CaskaydiaCove Nerd Font 10
+    # font = Taipei Sans TC Beta 10
+    font = MesloLGLDZ Nerd Font 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -154,7 +155,7 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = center
+    alignment = left
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
@@ -170,13 +171,13 @@
     ellipsize = middle
 
     # Ignore newlines '\n' in notifications.
-    ignore_newline = yes
+    ignore_newline = no
 
     # Stack together notifications with the same content
-    stack_duplicates = true
+    stack_duplicates = false
 
     # Hide the count of stacked notifications with the same content
-    hide_duplicate_count = false
+    hide_duplicate_count = true
 
     # Display indicators for URLs (U) and actions (A).
     show_indicators = no
@@ -195,7 +196,9 @@
     max_icon_size = 80
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/Papirus-Dark/48x48/status/:/usr/share/icons/Papirus-Dark/48x48/devices/:/usr/share/icons/Papirus-Dark/48x48/apps
+    icon_path = /usr/share/icons/kora/
+    enable_recursive_icon_lookup=true # need used with icon path
+    # icon_theme = "kora"
 
     ### History ###
 
@@ -209,10 +212,10 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    # dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser =  /usr/bin/firefox -new-tab
+    # browser =  /usr/bin/firefox -new-tab
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -275,7 +278,7 @@
     # will be executed in sequence.
     mouse_left_click = close_current
     mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
+    mouse_right_click = do_action, close_current
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
@@ -287,8 +290,8 @@
     # where there are multiple screens with very different dpi values.
     per_monitor_dpi = false
 
-[log_notifs]
-    script = ~/.config/dunst/scripts/dunst_logger.sh
+# [log_notifs]
+#     script = ~/.config/dunst/scripts/dunst_logger.sh
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
@@ -298,7 +301,7 @@
     highlight  = "#A9B1D6"
     timeout = 6
     # Icon for notifications with low urgency, uncomment to enable
-    #default_icon = /path/to/icon
+    # default_icon = /path/to/icon
 
 [urgency_normal]
     background = "#1A1B26"

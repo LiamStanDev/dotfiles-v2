@@ -4,7 +4,7 @@ qemu-system-x86_64 \
     -enable-kvm \
     -smp cores=4 \
     -m 16384 \
-    -drive file=/home/liam/Documents/virtual-machine/windows11.qcow2,format=qcow2,if=virtio,cache=writeback \
+    -hda /home/liam/Documents/virtual-machine/windows10.qcow2 \
     -vga qxl \
     -device qemu-xhci \
     -device usb-tablet \

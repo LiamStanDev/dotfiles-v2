@@ -129,6 +129,7 @@ return function()
 			capabilities = capabilities,
 			on_attach = on_attach,
 		}
+
 		-- find ./setting
 		local require_ok, conf_opts = pcall(require, "services.lsp-settings." .. server) -- for the settings folder
 		if require_ok then
