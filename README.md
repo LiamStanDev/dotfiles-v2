@@ -15,7 +15,7 @@ This is my configuaration in linux and macOS for daily usage.
 ## Screenshot
 
 ![Alt text](./.assets/screenshots/screenshot-float.png?raw=true)
-![Alt text](./.assets/screenshots/screenshot-tile.png?raw=true)
+![Alt text](./.assets/screenshots/screenshot-title.png?raw=true)
 
 ## Requirements
 
