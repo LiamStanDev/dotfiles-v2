@@ -5,7 +5,7 @@
     "margin-bottom": 0,
     "margin-left": 0,
     "margin-right": 0,    
-    "height": 16,
+    "height": 18,
     "spacing": 0,
 
     // Load Modules
@@ -14,15 +14,15 @@
     // Left
     "modules-left": [
         "custom/appmenu",
-        "wlr/taskbar",
+        "hyprland/workspaces",
+        // "wlr/taskbar",
         "group/quicklinks",
-        // "hyprland/window"
         "group/hardware"
     ],
 
     // Center
     "modules-center": [
-        "hyprland/workspaces"
+        "clock"
     ],
 
     // Right    
@@ -31,10 +31,9 @@
         "pulseaudio",
         "bluetooth",
         "backlight",
-        "battery", 
         "network",
+        "battery", 
         "custom/exit",
-        "clock"
     ],
 
     // Group
@@ -45,6 +44,7 @@
             "custom/browser",
             "custom/chatgpt",
             "custom/calculator",
+            "custom/teams",
             "custom/windowsvm"
          ]
     },

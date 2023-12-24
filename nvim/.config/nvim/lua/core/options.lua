@@ -1,6 +1,9 @@
 local cache_dir = vim.env.HOME .. "/.cache/nvim/"
 
 local options = {
+	-- file formate
+	ff = "unix",
+	ffs = "unix,dos",
 	-- line number
 	relativenumber = true,
 	number = true,
