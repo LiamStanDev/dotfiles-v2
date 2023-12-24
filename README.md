@@ -6,7 +6,8 @@ This is my configuaration in linux and macOS for daily usage.
 - **Window Manager 🪟**: Hyprland
 - **Shell 🌟**: Zsh with Zap and Starship
 - **Terminal**: kitty
-- **Git GUI ☑️**: lazygit
+- **Git TUI ☑️**: lazygit
+- **Docker TUI ☑️**: lazydocker
 - **Topbar 💈**: Waybar
 - **App Launcher 🚗**: Rofi
 - **File Manager 💼**: Thunar
