@@ -339,9 +339,19 @@
     "body": ["switch (${1:switch_on})", "{", "    $0", "    default:", "}"],
     "description": "Switch statement"
   },
-  "Try finally": {
+  "Try catch finally": {
     "prefix": "tryf",
-    "body": ["try", "{", "    $1", "}", "finally", "{", "    $0", "}"],
+    "body": [
+      "try", 
+      "{", "    $1", "}", 
+      "catch (${2:Exception})",
+      "{",
+      "    $0",
+      "    throw;",
+      "}",
+      "finally", 
+      "{", "    $3", "}"
+    ],
     "description": "Try finally"
   },
   "Try catch": {
@@ -351,7 +361,7 @@
       "{",
       "    $1",
       "}",
-      "catch (${2:System.Exception})",
+      "catch (${2:Exception})",
       "{",
       "    $0",
       "    throw;",
