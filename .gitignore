@@ -28,3 +28,5 @@ eww/.config/eww/images/icons/linageOS Icons
 sway/.config/sway/config.d
 Code/.config/Code/User/workspaceStorage/1701880901264
 Code/.config/Code/User/globalStorage
+fcitx5/.local/share/fcitx5/rime
+waybar/.config/waybar/scripts/github.sh
