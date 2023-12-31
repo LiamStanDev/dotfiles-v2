@@ -47,18 +47,6 @@ config.lsp_servers = { -- see https://github.com/williamboman/mason-lspconfig.nv
 	"clangd",
 }
 
--- formatting and diagnostics server
--- config.formatter_services = {
--- 	"prettier",
--- 	"black", -- python formatter
--- 	"stylua", -- lua formatter
--- 	"beautysh", -- bash formatter
--- 	"eslint_d",
--- 	-- "prismaFmt",
--- 	"gofmt",
--- 	"clang_format",
--- }
-
 config.formatter_services = {
 	lua = { "stylua" },
 	-- Conform will run multiple formatters sequentially
@@ -72,6 +60,8 @@ config.formatter_services = {
 	bash = { "beautysh" },
 	zsh = { "beautysh" },
 	shell = { "beautysh" },
+	xml = { "xmlformat" },
+	cs = { "csharpier" },
 }
 
 config.linting_services = {

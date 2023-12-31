@@ -6,11 +6,11 @@ This is my configuaration for the best editor.
 
 ## Screenshot
 
-![Alt text](./.assets/Screenshot-dashboard.png?raw=true "Neovim")
-![Alt text](./.assets/Screenshot-coding.png?raw=true)
-![Alt text](./.assets/Screenshot-terminal.png?raw=true)
-![Alt text](./.assets/Screenshot-findfile.png?raw=true)
-![Alt text](./.assets/Screenshot-keymaps.png?raw=true)
+![image](./.assets/Screenshot-dashboard.png?raw=true "Neovim")
+![image](./.assets/Screenshot-coding.png?raw=true)
+![image](./.assets/Screenshot-terminal.png?raw=true)
+![image](./.assets/Screenshot-findfile.png?raw=true)
+![image](./.assets/Screenshot-keymaps.png?raw=true)
 
 ## Installation
 
