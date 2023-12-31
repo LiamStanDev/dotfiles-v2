@@ -82,7 +82,7 @@ return function()
 		end, { silent = true, noremap = true, desc = "toggle signature" })
 
 		-- remove server formatter
-		if client.name ~= "omnisharp" and client.name ~= "rust_analyzer" and client.name ~= "lemminx" then
+		if client.name ~= "rust_analyzer" then
 			client.server_capabilities.documentFormattingProvider = false
 			client.server_capabilities.documentRangeFormattingProvider = false
 			-- client.resolved_capabilities.document_formatting = false -- Note: the following make semantic token very wier Do use!!!

@@ -63,4 +63,6 @@ return {
 		init = require("services.dap").init,
 		config = require("services.dap").config,
 	},
+	-- nvim lua api lsp
+	{ "folke/neodev.nvim", opts = {} },
 }

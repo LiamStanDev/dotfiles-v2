@@ -120,14 +120,14 @@ return {
 	},
 
 	-- markdown preview
-	-- {
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	build = "cd app && npm install",
-	-- 	config = function()
-	-- 		vim.g.mkdp_filetypes = { "markdown" }
-	-- 	end,
-	-- 	ft = { "markdown" }, -- load at markdown file type
-	-- },
+
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		build = "cd app && npm install",
+		init = require("tools.markdown-preview"),
+		ft = { "markdown" },
+	},
 
 	-- nvim api documentation, and cmp
 	{ "folke/neodev.nvim", opts = {} },

@@ -1,4 +1,6 @@
 return {
+	-- fcitx
+	{ "h-hg/fcitx.nvim", event = "InsertEnter" },
 
 	-- auto autopairs
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = require("editor.autopairs") },
