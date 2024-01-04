@@ -19,12 +19,27 @@ export PATH="$PATH:/usr/bin:/usr/sbin:/usr/local/bin"
 # npm install global path
 export NPM_CONFIG_PREFIX=~/.npm-global
 
+
+# pnpm
+export PNPM_HOME="/home/liam/.local/share/pnpm"
+case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 # oh-my-posh
 # eval "$(oh-my-posh --init --shell zsh --config $HOME/.config/oh-my-posh/liam.omp.json)"
 
 # srarship prop (need locale UTF8)
-export STARSHIP_CONFIG=~/.config/starship.toml
-eval "$(starship init zsh)"
+if [ -f /bin/starship ]; then
+    export STARSHIP_CONFIG=~/.config/starship.toml
+    eval "$(starship init zsh)"
+fi
+
+# zoxide init
+if [ -f /bin/zoxide ]; then
+    eval "$(zoxide init zsh)"
+fi
 
 # setting local binary path
 export PATH="$PATH:$HOME/.local/bin"
@@ -35,6 +50,7 @@ export PATH="$PATH:$HOME/.cargo/env"
 # dotnet sdk path
 export DOTNET_ROOT=$HOME/.local/dotnet
 export PATH="$PATH:$DOTNET_ROOT"
+export PATH="$PATH:$DOTNET_ROOT/sdk/8.0.100" # for vscode c# dev extension
 
 # dotnet tool
 export PATH="$PATH:$HOME/.dotnet/tools"

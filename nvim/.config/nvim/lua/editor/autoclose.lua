@@ -18,7 +18,7 @@ return function()
 			-- ['"'] = { escape = true, close = true, pair = '""' },
 			-- ["'"] = { escape = true, close = true, pair = "''" },
 			-- ["`"] = { escape = true, close = true, pair = "``" },
-			["|"] = { escape = true, close = true, pair = "||" },
+			-- ["|"] = { escape = true, close = true, pair = "||" },
 		},
 	})
 end

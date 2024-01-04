@@ -16,24 +16,6 @@ return function()
 
 	-- set behavior for specific buffer
 	local function on_attach(client, bufnr)
-		-- set keymap
-		-- local opts = { noremap = true, silent = true }
-		-- local keymap = vim.api.nvim_buf_set_keymap
-		-- keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-		-- keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-		-- keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-		-- keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
-
-		-- keymap(bufnr, "n", "<space>na", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
-		-- keymap(bufnr, "n", "<space>nd", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
-		-- keymap(
-		-- 	bufnr,
-		-- 	"n",
-		-- 	"<space>nl",
-		-- 	"<cmd>lua vim.notify(vim.inspect(vim.lsp.buf.list_workspace_folders()), 'Info')<CR>",
-		-- 	opts
-		-- )
-
 		local keymap = vim.keymap.set
 		-- C-t: go back
 		keymap("n", "gD", "<cmd>Lspsaga peek_definition<CR>")
@@ -82,7 +64,7 @@ return function()
 		end, { silent = true, noremap = true, desc = "toggle signature" })
 
 		-- remove server formatter
-		if client.name ~= "rust_analyzer" then
+		if client.name ~= "omnisharp" and client.name ~= "rust_analyzer" then
 			client.server_capabilities.documentFormattingProvider = false
 			client.server_capabilities.documentRangeFormattingProvider = false
 			-- client.resolved_capabilities.document_formatting = false -- Note: the following make semantic token very wier Do use!!!
@@ -97,23 +79,6 @@ return function()
 	-- capabilities
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities) -- add to cmp
-	capabilities.textDocument.completion.completionItem = {
-		documentationFormat = { "markdown", "plaintext" },
-		snippetSupport = true,
-		preselectSupport = true,
-		insertReplaceSupport = true,
-		labelDetailsSupport = true,
-		deprecatedSupport = true,
-		commitCharactersSupport = true,
-		tagSupport = { valueSet = { 1 } },
-		resolveSupport = {
-			properties = {
-				"documentation",
-				"detail",
-				"additionalTextEdits",
-			},
-		},
-	}
 
 	-- nvim-ufo
 	-- Tell the server the capability of foldingRange,

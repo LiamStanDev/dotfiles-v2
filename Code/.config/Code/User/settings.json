@@ -1,64 +1,31 @@
 {
+  "workbench.colorTheme": "One Dark Pro",
   "window.titleBarStyle": "custom",
   "window.dialogStyle": "custom",
-  "workbench.colorTheme": "One Dark Pro Darker",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.sideBar.location": "left",
-  "workbench.list.smoothScrolling": true,
-  "editor.fontFamily": "Cascadia Code",
-  "editor.fontSize": 13,
-  "editor.lineHeight": 24,
+  "window.zoomLevel": 0.4,
+  "editor.lineHeight": 20,
+  "editor.fontFamily": "'CaskaydiaCove Nerd Font'",
   "editor.tabSize": 2,
-  "editor.formatOnSave": true,
-  "editor.rulers": [],
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
   "editor.acceptSuggestionOnEnter": "off",
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative",
+  "editor.stickyScroll.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": "explicit",
+    "source.organizeImports": "explicit"
+  },
   "editor.cursorBlinking": "smooth",
   "editor.cursorStyle": "line",
-  "editor.fontLigatures": true,
-  "editor.wordWrap": "off",
-  "editor.wordWrapColumn": 120,
-  "editor.largeFileOptimizations": false,
-  "editor.suggestSelection": "first",
-  "editor.accessibilitySupport": "off",
-  "editor.snippetSuggestions": "bottom",
-  "editor.guides.bracketPairs": true,
+  "editor.largeFileOptimizations": true,
   "editor.mouseWheelZoom": true,
   "editor.formatOnPaste": false,
-  "editor.cursorSmoothCaretAnimation": "off",
-  "editor.smoothScrolling": true,
-  "editor.formatOnType": true,
-  "editor.suggest.snippetsPreventQuickSuggestions": false,
-  "files.autoSave": "off",
-  "files.autoGuessEncoding": true,
-  "debug.showBreakpointsInOverviewRuler": false,
-  "terminal.integrated.fontSize": 13,
-  "terminal.integrated.fontFamily": "Hack Bold Nerd Font Complete Mono",
-  "terminal.integrated.fontWeight": "bold",
-
-  "workbench.editorAssociations": {
-    "*.class": "default"
-  },
-  "editor.acceptSuggestionOnCommitCharacter": true,
-
-  "liveServer.settings.CustomBrowser": "chrome",
-
-  "liveServer.settings.donotShowInfoMsg": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "csharpextensions.privateMemberPrefix": "_",
-  "omnisharp.enableImportCompletion": true,
-  "csharp.inlayHints.parameters.forLiteralParameters": true,
-  "csharp.inlayHints.parameters.forObjectCreationParameters": true,
-  "csharp.inlayHints.parameters.forOtherParameters": true,
-  "omnisharp.enableRoslynAnalyzers": true,
-  "omnisharp.sdkPath": "/usr/lib64/dotnet/sdk/7.0.103",
-  "omnisharp.dotnetPath": "/usr/bin/dotnet",
-  "omnisharp.organizeImportsOnFormat": true,
-
-  "workbench.preferredDarkColorTheme": "One Dark Pro",
-
-  "git.autofetch": true,
-  "csharpextensions.useFileScopedNamespace": true,
-  "csharpextensions.useThisForCtorAssignments": false,
+  "explorer.confirmDelete": false,
   "files.exclude": {
     "**/obj": true,
     "**/.git": true,
@@ -68,147 +35,111 @@
     "**/.DS_Store": true,
     "**/*.js": {
       "when": "$(basename).ts"
-    },
-    "**/node_modules": true
+    }
+    // "**/node_modules": true
   },
-  "prettier.arrowParens": "avoid",
-  "[csharp]": {
-    "editor.defaultFormatter": "ms-dotnettools.csharp",
-    "editor.tabSize": 4
-  },
-  "gitlens.currentLine.enabled": false,
-  "gitlens.hovers.currentLine.over": "line",
 
+  // this will search recursively for project with .git
+  "projectManager.git.baseFolders": ["/home/liam/Workspace"],
+  "keyboard.dispatch": "keyCode",
   "vim.leader": "<space>",
   "vim.easymotion": true,
+  "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.highlightedyank.enable": true,
+  "vim.insertModeKeyBindings": [{}],
   "vim.normalModeKeyBindingsNonRecursive": [
-    // // let p use the yanked register, not the delete register.
-    // {
-    //   "before": ["p"],
-    //   "after": ["\"", "0", "p"]
-    // },
-    {
-      "before": ["z", "z"],
-      "after": [],
-      "commands": ["editor.toggleFold"]
-    },
-    {
-      "before": ["H"],
-      "after": ["^"]
-    },
-    {
-      "before": ["L"],
-      "after": ["g", "_"]
-    },
     {
       "before": ["<leader>", "w"],
-      "after": [],
-      "commands": ["workbench.action.files.saveAll"]
+      "commands": [":w!"]
+    },
+
+    {
+      "before": ["<leader>", "q"],
+      "commands": [":q"]
     },
     {
-      "before": ["u"],
-      "after": [],
-      "commands": ["undo"]
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
     },
     {
-      "before": ["<leader>", "/"],
-      "after": [],
-      "commands": ["editor.action.commentLine"]
+      "before": ["<leader>", "h"],
+      "commands": [":nohl"]
+    },
+
+    // l stands for neovim lsp
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["editor.action.showHover"]
     },
     {
-      "before": ["<leader>", "d", "t"],
-      "after": [],
+      "before": ["<leader>", "l", "j"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["<leader>", "l", "k"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["<leader>", "l", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "l", "o"],
+      "commands": ["workbench.action.toggleAuxiliaryBar"]
+    },
+
+    // d stands for debug
+    {
+      "before": ["<leader>", "d", "b"],
       "commands": ["editor.debug.action.toggleBreakpoint"]
     },
     {
-      "before": ["<leader>", "d", "s"],
-      "after": [],
+      "before": ["<leader>", "d", "r"],
       "commands": ["workbench.action.debug.start"]
     },
     {
-      "before": ["<leader>", "d", "x"],
-      "after": [],
-      "commands": ["workbench.action.debug.stop"]
-    },
-    {
       "before": ["<leader>", "d", "c"],
-      "after": [],
       "commands": ["workbench.action.debug.continue"]
     },
     {
-      "before": ["<leader>", "d", "i"],
-      "after": [],
+      "before": ["<leader>", "d", "s"],
       "commands": ["workbench.action.debug.stepInto"]
     },
     {
-      "before": ["<leader>", "d", "o"],
-      "after": [],
+      "before": ["<leader>", "d", "n"],
       "commands": ["workbench.action.debug.stepOver"]
     },
     {
-      "before": ["<leader>", "d", "I"],
-      "after": [],
+      "before": ["<leader>", "d", "o"],
       "commands": ["workbench.action.debug.stepOut"]
-    }
-  ],
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["k", "j"],
-      "after": ["<Esc>"]
-    }
-  ],
-  "vim.visualModeKeyBindings": [
-    {
-      "before": ["i"],
-      "after": ["<Esc>", "i"]
     },
     {
-      "before": ["H"],
-      "after": ["^"]
-    },
-    {
-      "before": ["L"],
-      "after": ["g", "_"]
-    },
-    {
-      "before": ["<leader>", "/"],
-      "after": [],
-      "commands": ["editor.action.commentLine"]
-    }
-  ],
-  "vim.camelCaseMotion.enable": true,
-  "vim.cursorStylePerMode.visual": "block-outline",
-  "vim.commandLineModeKeyBindingsNonRecursive": [],
-  "vim.operatorPendingModeKeyBindings": [
-    {
-      "before": ["H"],
-      "after": ["^"]
-    },
-    {
-      "before": ["L"],
-      "after": ["g", "_"]
+      "before": ["<leader>", "d", "q"],
+      "commands": ["workbench.action.debug.stop"]
     }
   ],
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false,
-    "<C-b>": false,
-    "<C-i>": false,
-    "<C-.>": false
+    "<C-p>": false
   },
-  "explorer.compactFolders": false,
-  "editor.minimap.enabled": false,
-  // for auto close tag don't close the generic of typescript
-  // the closing tag only use for .tsx file
-  "auto-close-tag.activationOnLanguage": ["html", "xml", "javascript", "javascriptreact", "typescriptreact"],
-  "prettier.printWidth": 9999,
-  "prettier.proseWrap": "never",
-  "[python]": {
-    "editor.formatOnType": true
+
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
   },
-  "window.zoomLevel": 1.2,
-  "css.lint.unknownAtRules": "ignore",
-  "workbench.editor.empty.hint": "hidden"
+
+  // front-end
+  "typescript.autoClosingTags": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+
+  // c#
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp",
+    "editor.tabSize": 4
+  },
+  "csharp.debug.justMyCode": false
 }

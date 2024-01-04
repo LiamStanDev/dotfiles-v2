@@ -3,14 +3,15 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# logo-ls
-# if [ -x "${HOME}/.local/bin/logo-ls" ]; then
-#     alias l="logo-ls"
-#     alias ll='logo-ls -l'
-#     alias la='logo-ls -la'
-# fi
-alias l="ls -l"
-alias la="ls -la"
+if [ -f "/usr/bin/lsd" ]; then
+    alias l="lsd -l"
+    alias la="lsd -la"
+    alias lt="lsd --tree"
+else
+    echo "lsd is not installed."
+    alias l="ls -l"
+    alias la="ls -la"
+fi
 
 # neovim
 alias n="nvim"
@@ -18,7 +19,7 @@ alias nv="nvim"
 alias v="nvim"
 
 # joshuto
-alias j="joshuto"
+# alias j="joshuto"
 
 # tmux
 alias t="tmux"
@@ -34,9 +35,12 @@ alias lzg="lazygit"
 alias lzd="lazydocker"
 
 # dotnet CLI
-alias dotnet-w="dotnet watch --no-hot-reload --project"
-alias dotnet-r='dotnet run --project'
+alias dotnet-w="dotnet watch --no-hot-reload"
+alias dotnet-r='dotnet run'
 alias dotnet-b='dotnet build'
+
+# dos2unix
+alias d2u="source ~/.config/zsh/scripts/d2u.sh" # for whole directory file
 
 # logoff
 # alias logoff="gnome-session-quit" # need to change by the user name

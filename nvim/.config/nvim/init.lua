@@ -38,12 +38,11 @@ config.lsp_servers = { -- see https://github.com/williamboman/mason-lspconfig.nv
 	"dockerls",
 	"docker_compose_language_service",
 	-- "taplo", -- toml lsp
-	-- "lemminx", -- xml lsp
-	-- "tailwindcss",
+	"tailwindcss",
 	"omnisharp",
 	"rust_analyzer",
 	-- "prismals",
-	--"gopls",
+	"gopls",
 	"clangd",
 }
 
@@ -60,8 +59,8 @@ config.formatter_services = {
 	bash = { "beautysh" },
 	zsh = { "beautysh" },
 	shell = { "beautysh" },
-	xml = { "xmlformat" },
-	cs = { "csharpier" },
+	-- xml = { "xmlformat" },
+	-- cs = { "csharpier" },
 }
 
 config.linting_services = {

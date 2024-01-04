@@ -35,4 +35,11 @@ gui:
 disableStartupPopups: true
 notARepository: "prompt" # one of: 'prompt' | 'create' | 'skip'
 os:
-  editPreset: "nvim"
+  edit: "nvim" # use nvim float
+keybinding:
+  universal:
+    return: "<c-c>"
+git:
+  paging:
+    colorArg: never
+    pager: delta --dark --paging=never

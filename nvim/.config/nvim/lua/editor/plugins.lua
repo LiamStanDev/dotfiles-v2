@@ -4,7 +4,7 @@ return {
 
 	-- auto autopairs
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = require("editor.autopairs") },
-	{ "m4xshen/autoclose.nvim", event = "InsertEnter", config = require("editor.autoclose") },
+	-- { "m4xshen/autoclose.nvim", event = "InsertEnter", config = require("editor.autoclose") },
 
 	-- comment
 	{ "numToStr/Comment.nvim", event = { "BufNewFile", "BufReadPre" }, config = require("editor.comment") },
