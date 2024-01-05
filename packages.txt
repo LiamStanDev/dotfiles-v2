@@ -1,6 +1,5 @@
 adobe-source-han-sans-tw-fonts
 archlinux-keyring
-asusctl
 base
 base-devel
 bat
@@ -24,6 +23,7 @@ dunst
 dust
 efibootmgr
 eog
+ethtool
 fcitx5
 fcitx5-breeze
 fcitx5-chewing
@@ -104,16 +104,15 @@ qemu-system-x86
 reflector
 ripgrep
 rofi
-rog-control-center
 sddm
 sddm-kcm
 slurp
+smartmontools
 spice-vdagent
 starship
 stow
 stress
 sudo
-supergfxctl
 swaybg
 swayidle
 swaylock-effects-git
@@ -123,6 +122,7 @@ thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
 timeshift
+tlp
 tmux
 tokei
 traceroute
@@ -134,6 +134,7 @@ unzip
 usbutils
 vim
 visual-studio-code-bin
+vulkan-intel
 waybar-hyprland
 wezterm
 wget
@@ -143,6 +144,7 @@ wlogout
 wqy-microhei
 xdg-desktop-portal-hyprland
 xdg-user-dirs
+xf86-video-intel
 xorg-xhost
 zoxide
 zsh
