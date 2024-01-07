@@ -42,7 +42,7 @@ config.lsp_servers = { -- see https://github.com/williamboman/mason-lspconfig.nv
 	"omnisharp",
 	"rust_analyzer",
 	-- "prismals",
-	"gopls",
+	-- "gopls",
 	"clangd",
 }
 
@@ -54,7 +54,7 @@ config.formatter_services = {
 	javascript = { { "prettierd", "prettier" } },
 	typescript = { { "prettierd", "prettier" } },
 	typescriptreact = { { "prettierd", "prettier" } },
-	go = { "gofmt" },
+	-- go = { "gofmt" },
 	cpp = { "clang_format" },
 	bash = { "beautysh" },
 	zsh = { "beautysh" },
@@ -76,7 +76,7 @@ config.dap_servers = {
 	"cppdbg",
 	"coreclr", -- csharp
 	"codelldb",
-	"delve", -- go
+	-- "delve", -- go
 }
 
 -- -----------------------------------------------------

@@ -48,10 +48,11 @@
     "tooltip": false
   },
 
-  // Windows VM
+  // VM
   "custom/windowsvm": {
     "format": "",
-    "on-click": "source ~/.config/zsh/scripts/launchvm.sh",
+    // "on-click": "source ~/.config/zsh/scripts/launchvm.sh",
+    "on-click": "virt-manager",
     "tooltip": false
   },
 
