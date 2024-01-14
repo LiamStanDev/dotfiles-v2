@@ -98,7 +98,7 @@ config.which_key_window_border = "single" -- none, single, double, shadow
 
 -- show inline hint
 config.open_type_hint = true -- for variable
-config.open_parameter_hint = false
+config.open_parameter_hint = true
 
 -- completion menu with text
 config.cmp_kind_text = true
