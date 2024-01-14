@@ -5,7 +5,7 @@
     "command": "projectManager.listGitProjects#sideBarGit"
   },
 
-  // navigation
+  // ------------------- navigation ----------------
   {
     "key": "ctrl+h",
     "command": "workbench.action.navigateLeft",
@@ -26,22 +26,32 @@
     "command": "workbench.action.navigateDown",
     "when": "!inQuickOpen && !suggestWidgetVisible"
   },
-  // completion
+  // ------------------------- completion ------------
   {
     "key": "ctrl+p",
     "command": "editor.action.triggerSuggest",
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
   },
 
-  // selection
+  // ---------------- selection --------------------
   {
     "key": "ctrl+k",
     "command": "selectPrevCodeAction",
     "when": "codeActionMenuVisible"
   },
   {
+    "key": "ctrl+j",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
     "key": "ctrl+k",
     "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
   },
   {
@@ -56,26 +66,16 @@
   },
   {
     "key": "ctrl+j",
-    "command": "selectNextCodeAction",
-    "when": "codeActionMenuVisible"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.quickOpenNavigateNext",
+    "command": "workbench.action.quickOpenSelectNext",
     "when": "inFilesPicker && inQuickOpen"
   },
   {
     "key": "ctrl+k",
-    "command": "workbench.action.quickOpenNavigatePrevious",
+    "command": "workbench.action.quickOpenSelectPrevious",
     "when": "inFilesPicker && inQuickOpen"
   },
 
-  // move line
+  // ------------------------ editing ------------------
   {
     "key": "alt+j",
     "command": "editor.action.moveLinesDownAction",
@@ -87,7 +87,25 @@
     "when": "editorTextFocus && !editorReadonly"
   },
 
-  // file system
+  // ----------------- tab (editor) ------------------------
+  {
+    "key": "alt+,",
+    "command": "workbench.action.previousEditorInGroup"
+  },
+  {
+    "key": "alt+.",
+    "command": "workbench.action.nextEditorInGroup"
+  },
+  {
+    "key": "shift+alt+,",
+    "command": "workbench.action.moveEditorToPreviousGroup"
+  },
+  {
+    "key": "shift+alt+.",
+    "command": "workbench.action.moveEditorToNextGroup"
+  },
+
+  // ---------------- file system -------------------
   {
     "key": "ctrl+f",
     "command": "workbench.action.quickOpen"
@@ -136,8 +154,13 @@
     "command": "filesExplorer.paste",
     "when": "filesExplorerFocus && !inputFocus "
   },
+  {
+    "key": "v",
+    "command": "explorer.openToSide",
+    "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
+  },
 
-  // remove defulat key binding
+  // ---------------- remove defulat key binding -----------------------
   {
     "key": "space",
     "command": "-filesExplorer.openFilePreserveFocus",
@@ -226,5 +249,23 @@
     "key": "ctrl+space",
     "command": "-editor.action.triggerSuggest",
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+k ctrl+pagedown",
+    "command": "-workbench.action.nextEditorInGroup"
+  },
+  {
+    "key": "ctrl+k ctrl+pageup",
+    "command": "-workbench.action.previousEditorInGroup"
+  },
+  {
+    "key": "shift+alt+.",
+    "command": "-editor.action.autoFix",
+    "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-explorer.openToSide",
+    "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
   }
 ]

@@ -13,13 +13,19 @@
 	<directories/>
 </action>
 <action>
-	<icon></icon>
-	<name></name>
+	<icon>config-users</icon>
+	<name>Open as admin</name>
 	<submenu></submenu>
-	<unique-id>1680146833144655-1</unique-id>
-	<command></command>
-	<description></description>
+	<unique-id>1704674206022349-1</unique-id>
+	<command>pkexec thunar %f</command>
+	<description>Using root to open</description>
 	<range>*</range>
 	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
 </action>
 </actions>

@@ -17,18 +17,41 @@ dap.configurations.cs = {
 	{
 		name = "NetCoreDbg: Launch",
 		type = "coreclr",
+		mode = "local",
 		request = "launch",
 		cwd = "${fileDirname}",
 		program = utils.get_cs_dll,
 	},
 	-- https://stackoverflow.com/questions/77013544/error-on-attach-key-processid-not-found-when-trying-attach-neovim-dap-debu
 	{
-		name = "NetCoreDbg: Attach",
+		name = "NetCoreDbg: Attach (Local)",
 		type = "coreclr",
+		mode = "local",
 		request = "attach",
 		cwd = "${fileDirname}",
 		processId = require("dap.utils").pick_process,
 	},
+	-- TODO: remote debug not complete
+	-- {
+	-- 	name = "NetCoreDbg: Attach (Remote)",
+	-- 	mode = "remote",
+	-- 	type = "coreclr",
+	-- 	request = "attach",
+	-- 	connect = {
+	-- 		host = function()
+	-- 			return vim.fn.input("Host [127.0.0.1]: ")
+	-- 		end,
+	-- 		port = function()
+	-- 			return vim.fn.input("Port: ")
+	-- 		end,
+	-- 	},
+	-- 	-- port = utils.get_port(),
+	-- 	pathMappings = {
+	-- 		-- if your docker souce file is not in /app
+	-- 		-- change to your location.
+	-- 		["/app"] = "${workspaceFolder}",
+	-- 	},
+	-- },
 }
 
 -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md

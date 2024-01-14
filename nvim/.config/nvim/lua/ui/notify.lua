@@ -1,6 +1,6 @@
 return function()
 	require("notify").setup({
-		background_colour = "#000000",
+		background_colour = "#282C34",
 		fps = 60,
 		icons = {
 			DEBUG = "",
@@ -9,7 +9,7 @@ return function()
 			TRACE = "✎",
 			WARN = "",
 		},
-		level = vim.log.levels.TRACE,
+		level = vim.log.levels.ERROR,
 		minimum_width = 25,
 		render = "compact",
 		stages = "fade",

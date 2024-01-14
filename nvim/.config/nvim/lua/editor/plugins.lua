@@ -92,4 +92,14 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 		dependencies = { "kevinhwang91/promise-async" },
 	},
+
+	-- surround
+	{
+		"kylechui/nvim-surround",
+		version = "*",
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup()
+		end,
+	},
 }

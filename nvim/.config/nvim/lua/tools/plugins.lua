@@ -56,16 +56,6 @@ return {
 	-- 	config = require("tools.live-server"),
 	-- },
 
-	-- surround
-	{
-		"kylechui/nvim-surround",
-		version = "*",
-		event = "VeryLazy",
-		config = function()
-			require("nvim-surround").setup()
-		end,
-	},
-
 	-- rust
 	{
 		"rust-lang/rust.vim",

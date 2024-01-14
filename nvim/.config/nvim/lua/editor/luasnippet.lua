@@ -32,5 +32,5 @@ return function()
 		if luasnip.jumpable(-1) then
 			luasnip.jump(-1)
 		end
-	end, { noremap = true, silent = true })
+	end, { noremap = false, silent = true })
 end

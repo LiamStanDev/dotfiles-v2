@@ -138,14 +138,14 @@ return function()
 			},
 			j = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = true})<cr>", "Next Hunk" },
 			k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = true})<cr>", "Prev Hunk" },
-			-- p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-			-- r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-			-- R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-			-- s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-			-- u = {
-			-- 	"<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-			-- 	"Undo Stage Hunk",
-			-- },
+			p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
+			r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
+			R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
+			s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+			u = {
+				"<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
+				"Undo Stage Hunk",
+			},
 		},
 		l = {
 			name = "LSP",
@@ -212,16 +212,16 @@ return function()
 				"Projects",
 			},
 		},
-		-- t = {
-		-- 	name = "Toggle Term",
-		-- 	g = { "<cmd>LazyGit<CR>", "Lazygit" },
-		-- 	q = { "<cmd>1 ToggleTerm<CR>", "terminal 1" },
-		-- 	w = { "<cmd>2 ToggleTerm<CR>", "terminal 2" },
-		-- 	e = { "<cmd>3 ToggleTerm<CR>", "terminal 3" },
-		-- 	r = { "<cmd>4 ToggleTerm<CR>", "terminal 4" },
-		-- 	t = { "<cmd>5 ToggleTerm direction=tab<CR>", "tab terminal" },
-		-- 	b = { "<cmd>6 ToggleTerm direction=horizontal<CR>", "bottom terminal" },
-		-- },
+		t = {
+			name = "Toggle Term",
+			g = { "<cmd>LazyGit<CR>", "Lazygit" },
+			q = { "<cmd>1 ToggleTerm<CR>", "terminal 1" },
+			w = { "<cmd>2 ToggleTerm<CR>", "terminal 2" },
+			e = { "<cmd>3 ToggleTerm<CR>", "terminal 3" },
+			r = { "<cmd>4 ToggleTerm<CR>", "terminal 4" },
+			t = { "<cmd>5 ToggleTerm direction=tab<CR>", "tab terminal" },
+			b = { "<cmd>6 ToggleTerm direction=horizontal<CR>", "bottom terminal" },
+		},
 	}
 
 	-- visual mode

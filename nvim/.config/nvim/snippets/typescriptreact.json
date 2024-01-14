@@ -33,5 +33,14 @@
     "prefix": "<>",
     "body": ["<>", "${1}", "</>"],
     "description": "React useEffect() hook"
+  },
+  "destructuring of state": {
+    "prefix": "ds",
+    "body": ["const { ${1:name} } = this.state"]
+  },
+  "Try-Catch Statement": {
+    "prefix": "try",
+    "body": ["try {", "\t$0", "} catch (${1:error}) {", "\t", "}"],
+    "description": "Try-Catch Statement"
   }
 }

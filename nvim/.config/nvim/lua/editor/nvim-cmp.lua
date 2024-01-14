@@ -84,7 +84,7 @@ return function()
 			["<C-f>"] = cmp.mapping.scroll_docs(4),
 			["<C-p>"] = cmp.mapping.complete(),
 			["<C-c>"] = cmp.mapping.abort(),
-			["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+			["<TAB>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 		}),
 		formatting = {
 			fields = { "kind", "abbr", "menu" },

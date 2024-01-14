@@ -1,11 +1,12 @@
 {
+  // -------------------------- vscode -----------------------------------
   "workbench.colorTheme": "One Dark Pro",
   "window.titleBarStyle": "custom",
   "window.dialogStyle": "custom",
   "workbench.iconTheme": "material-icon-theme",
-  "window.zoomLevel": 0.4,
-  "editor.lineHeight": 20,
-  "editor.fontFamily": "'CaskaydiaCove Nerd Font'",
+  "window.zoomLevel": 0.5,
+  "editor.lineHeight": 22,
+  "editor.fontFamily": "'Comic Mono','Yozai','CaskaydiaCove Nerd Font'",
   "editor.tabSize": 2,
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
@@ -22,6 +23,8 @@
   },
   "editor.cursorBlinking": "smooth",
   "editor.cursorStyle": "line",
+  "editor.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.largeFileOptimizations": true,
   "editor.mouseWheelZoom": true,
   "editor.formatOnPaste": false,
@@ -39,8 +42,7 @@
     // "**/node_modules": true
   },
 
-  // this will search recursively for project with .git
-  "projectManager.git.baseFolders": ["/home/liam/Workspace"],
+  // ---------------------------- vim -------------------------------------
   "keyboard.dispatch": "keyCode",
   "vim.leader": "<space>",
   "vim.easymotion": true,
@@ -68,6 +70,10 @@
       "before": ["<leader>", "h"],
       "commands": [":nohl"]
     },
+    {
+      "before": ["leader", "s", "t"],
+      "commands": ["workbench.view.search"]
+    },
 
     // l stands for neovim lsp
     {
@@ -89,6 +95,11 @@
     {
       "before": ["<leader>", "l", "o"],
       "commands": ["workbench.action.toggleAuxiliaryBar"]
+    },
+    {
+      "before": ["<leader>", "l", "r"],
+      "commands": ["editor.action.rename"],
+      "when": ["editorHasRenameProvider && editorTextFocus && !editor.Readonly"]
     },
 
     // d stands for debug
@@ -131,15 +142,27 @@
     "vscodevim.vim": 1
   },
 
-  // front-end
-  "typescript.autoClosingTags": true,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "extensions.autoUpdate": "onlyEnabledExtensions",
-
+  // ---------------------------- backedn-end-------------------------------------
   // c#
   "[csharp]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp",
     "editor.tabSize": 4
   },
-  "csharp.debug.justMyCode": false
+  "csharp.debug.justMyCode": false,
+
+  // ---------------------------- front-end-------------------------------------
+  "typescript.autoClosingTags": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  // tailwindcss plugin
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "plaintext": "javascript",
+    "plaintext": "javascriptreact",
+    "plaintext": "typescriptreact"
+  },
+
+  // ---------------------------- tools -------------------------------------
+  // this will search recursively for project with .git
+  "projectManager.git.baseFolders": ["/home/liam/Workspace"]
 }

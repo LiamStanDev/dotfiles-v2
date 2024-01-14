@@ -54,6 +54,7 @@ config.formatter_services = {
 	javascript = { { "prettierd", "prettier" } },
 	typescript = { { "prettierd", "prettier" } },
 	typescriptreact = { { "prettierd", "prettier" } },
+	json = { { "prettierd", "prettier" } },
 	-- go = { "gofmt" },
 	cpp = { "clang_format" },
 	bash = { "beautysh" },

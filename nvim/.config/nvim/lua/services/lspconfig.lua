@@ -11,7 +11,7 @@ return function()
 	-- connected mason and lspconfig
 	require("mason-lspconfig").setup({
 		ensure_installed = server_fiter,
-		-- automatic_installation = true,
+		automatic_installation = true,
 	})
 
 	-- set behavior for specific buffer
@@ -49,7 +49,7 @@ return function()
 
 		-- add some plugin
 		require("lsp-inlayhints").on_attach(client, bufnr)
-		require("illuminate").on_attach(client)
+		-- require("illuminate").on_attach(client)
 		require("lsp_signature").on_attach({
 			-- plugin for parameter hint
 			bind = true,
