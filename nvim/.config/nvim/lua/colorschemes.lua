@@ -5,7 +5,6 @@ return {
 		opts = {
 			colors = {}, -- Override default colors or create your own
 			highlights = {
-				LspInlayHint = { fg = "#FFFFFF", bg = "#5C6370", italic = true },
 			},
 			options = {
 				transparency = true,

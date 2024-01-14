@@ -48,7 +48,7 @@ return function()
 		-- end
 
 		-- add some plugin
-		require("lsp-inlayhints").on_attach(client, bufnr)
+		-- require("lsp-inlayhints").on_attach(client, bufnr)
 		-- require("illuminate").on_attach(client)
 		require("lsp_signature").on_attach({
 			-- plugin for parameter hint
