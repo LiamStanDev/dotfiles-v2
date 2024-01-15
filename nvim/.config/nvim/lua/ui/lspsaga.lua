@@ -1,5 +1,6 @@
 return function()
 	local g_config = require("core")
+
 	require("lspsaga").setup({
 		ui = {
 			-- This option only works in Neovim 0.9

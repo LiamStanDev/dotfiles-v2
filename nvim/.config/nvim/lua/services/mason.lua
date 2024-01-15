@@ -9,4 +9,12 @@ return function()
 			upgrade_pip = false,
 		},
 	})
+
+	local servers = require("core").lsp_servers
+
+	-- connected mason and lspconfig
+	require("mason-lspconfig").setup({
+		ensure_installed = servers,
+		automatic_installation = true,
+	})
 end

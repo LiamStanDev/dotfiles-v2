@@ -19,8 +19,6 @@ return {
 		config = require("ui.lspsaga"),
 	},
 
-	-- file explorers
-	-- { "nvim-tree/nvim-tree.lua", event = "VeryLazy", config = require("ui.nvim-tree") },
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		event = "VeryLazy",
