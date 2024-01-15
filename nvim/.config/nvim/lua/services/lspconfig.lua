@@ -70,6 +70,12 @@ return function()
 			-- client.resolved_capabilities.document_formatting = false -- Note: the following make semantic token very wier Do use!!!
 		end
 
+		-- TODO: inlay hint not working
+		-- if client.server_capabilities.inlayHintProvider then
+		-- 	vim.lsp.inlay_hint(0, nil)
+		-- 	vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "red" })
+		-- end
+
 		-- this bug is fixed
 		-- if client.name == "omnisharp" then
 		-- 	client.server_capabilities.semanticTokensProvider = nil
