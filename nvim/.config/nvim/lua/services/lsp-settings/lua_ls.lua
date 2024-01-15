@@ -8,6 +8,8 @@ return {
 			completion = {
 				callSnippet = "Replace",
 			},
+			-- TODO: inlay hint
+			-- hint = { enable = true },
 		},
 	},
 }

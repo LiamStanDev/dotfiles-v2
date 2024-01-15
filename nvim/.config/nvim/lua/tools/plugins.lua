@@ -4,7 +4,6 @@ return {
 		version = "v1.*",
 	},
 
-	-- { "moll/vim-bbye" }, -- can delete buffers (close files)
 	{ "famiu/bufdelete.nvim", event = "VeryLazy" },
 
 	-- keymap ui
@@ -17,57 +16,12 @@ return {
 		config = require("tools.troble"),
 	},
 
-	-- inline hint
-	-- {
-	-- 	"lvimuser/lsp-inlayhints.nvim",
-	-- 	lazy = true,
-	-- 	branch = "anticonceal",
-	-- 	opts = {},
-	-- 	init = function()
-	-- 		vim.api.nvim_create_autocmd("LspAttach", {
-	-- 			group = vim.api.nvim_create_augroup("LspAttach_inlayhints", {}),
-	-- 			callback = function(args)
-	-- 				if not (args.data and args.data.client_id) then
-	-- 					return
-	-- 				end
-	-- 				local client = vim.lsp.get_client_by_id(args.data.client_id)
-	-- 				require("lsp-inlayhints").on_attach(client, args.buf)
-	-- 			end,
-	-- 		})
-	-- 	end,
-	-- },
-
 	-- todo comment
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = require("tools.todo-comment"),
 	},
-
-	-- AI
-	-- {
-	-- 	"jackMort/ChatGPT.nvim",
-	-- 	event = "VeryLazy",
-	-- 	config = function()
-	-- 		require("chatgpt").setup()
-	-- 		-- require("tools.chatGPT")
-	-- 	end,
-	-- 	dependencies = {
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"nvim-telescope/telescope.nvim",
-	-- 	},
-	-- },
-
-	-- -- live-server
-	-- {
-	-- 	"aurum77/live-server.nvim",
-	-- 	build = function()
-	-- 		require("live_server.util").install()
-	-- 	end,
-	-- 	cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
-	-- 	config = require("tools.live-server"),
-	-- },
 
 	-- rust
 	{
@@ -93,12 +47,6 @@ return {
 		branch = "v2", -- optional but strongly recommended
 		config = require("tools.hop"),
 	},
-	-- {
-	-- 	"ggandor/leap.nvim",
-	-- 	config = function()
-	-- 		require("leap").add_default_mappings()
-	-- 	end,
-	-- },
 
 	-- telescopte
 	{

@@ -175,6 +175,7 @@ return function()
 				end,
 				"Prev Error",
 			},
+			h = { "<cmd>lua vim.lsp.inlay_hint(0,nil)<cr>", "Toggle hint" },
 			w = { "<cmd>Trouble<CR>", "Trouble" },
 			-- l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 			-- q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },

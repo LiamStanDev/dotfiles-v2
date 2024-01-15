@@ -13,11 +13,11 @@ return {
 				"Hoffs/omnisharp-extended-lsp.nvim", -- for omnisharp decompile
 				ft = "cs",
 			},
-			-- {
-			-- 	"Decodetalkers/csharpls-extended-lsp.nvim", -- for charp_ls decompile
-			-- 	ft = "cs",
-			-- },
-			"ray-x/lsp_signature.nvim",
+			{
+				"ray-x/lsp_signature.nvim",
+				event = "VeryLazy",
+				config = require("services.lsp-signature"),
+			},
 		},
 		config = require("services.lspconfig"),
 	},
@@ -32,6 +32,7 @@ return {
 	-- 	},
 	-- 	config = require("services.none-ls"),
 	-- },
+
 	-- formatting
 	{
 		"stevearc/conform.nvim",

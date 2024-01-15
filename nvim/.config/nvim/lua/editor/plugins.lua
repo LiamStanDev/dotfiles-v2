@@ -9,13 +9,6 @@ return {
 	-- comment
 	{ "numToStr/Comment.nvim", event = { "BufNewFile", "BufReadPre" }, config = require("editor.comment") },
 
-	-- for text highlight
-	{
-		"RRethy/vim-illuminate",
-		event = { "CursorHold", "CursorHoldI" },
-		config = require("editor.illuminate"),
-	},
-
 	-- indnet line
 	{
 		"lukas-reineke/indent-blankline.nvim",
