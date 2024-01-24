@@ -24,10 +24,10 @@ return function()
 		local keymap = vim.keymap.set
 
 		-- lsp keymapsetting
-		keymap("n", "gD", "<cmd>Lspsaga peek_definition<CR>")
+		-- keymap("n", "gD", "<cmd>Lspsaga peek_definition<CR>")
 		keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>") -- Use <C-t> to jump back
 		keymap("n", "gf", "<cmd>Lspsaga lsp_finder<CR>")
-		keymap("n", "gT", "<cmd>Lspsaga peek_type_definition<CR>")
+		-- keymap("n", "gT", "<cmd>Lspsaga peek_type_definition<CR>")
 		keymap("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
 		keymap("n", "gl", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
 		keymap("n", "gb", "<cmd>Lspsaga show_buf_diagnostics<CR>")

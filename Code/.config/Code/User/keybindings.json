@@ -87,22 +87,20 @@
     "when": "editorTextFocus && !editorReadonly"
   },
 
+  // ----------------- window ------------------------
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.closePanel"
+  },
+
   // ----------------- tab (editor) ------------------------
   {
-    "key": "alt+,",
+    "key": "alt+h",
     "command": "workbench.action.previousEditorInGroup"
   },
   {
-    "key": "alt+.",
+    "key": "alt+l",
     "command": "workbench.action.nextEditorInGroup"
-  },
-  {
-    "key": "shift+alt+,",
-    "command": "workbench.action.moveEditorToPreviousGroup"
-  },
-  {
-    "key": "shift+alt+.",
-    "command": "workbench.action.moveEditorToNextGroup"
   },
 
   // ---------------- file system -------------------
@@ -160,7 +158,17 @@
     "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
   },
 
-  // ---------------- remove defulat key binding -----------------------
+  // ---------------- Explore ------------------------------------------
+  {
+    "key": "d",
+    "command": "csdevkit.deleteItem",
+    "when": "focusedView == 'solutionExplorer' && selectedSolutionExplorerNodeType == 'File' || focusedView == 'solutionExplorer' && selectedSolutionExplorerNodeType == 'Folder'"
+  },
+  {
+    "key": "r",
+    "command": "csdevkit.rename",
+    "when": "focusedVied == 'solutionExplorer' && selectedSolutionExplorerNodeType == 'File' || focusedView == 'solutionExplorer' && selectedSolutionExplorerNodeType == 'Folder' || focusedView == 'solutionExplorer' && selectedSolutionExplorerNodeType == 'Project'"
+  },
   {
     "key": "space",
     "command": "-filesExplorer.openFilePreserveFocus",
@@ -267,5 +275,48 @@
     "key": "ctrl+enter",
     "command": "-explorer.openToSide",
     "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
+  },
+  {
+    "key": "alt+h",
+    "command": "-testing.toggleTestingPeekHistory",
+    "when": "testing.isPeekVisible"
+  },
+  {
+    "key": "alt+l",
+    "command": "-toggleSearchEditorContextLines",
+    "when": "inSearchEditor"
+  },
+  {
+    "key": "alt+l",
+    "command": "-toggleFindInSelection",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quit"
+  },
+  {
+    "key": "ctrl+shift+w",
+    "command": "-workbench.action.closeWindow"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-vscode-neovim.send",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.q && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-vscode-neovim.send",
+    "when": "editorTextFocus && neovim.ctrlKeysInsert.q && neovim.init && neovim.mode == 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "key": "f2",
+    "command": "-csdevkit.rename",
+    "when": "focusedView == 'solutionExplorer' && selectedSolutionExplorerNodeType == 'File' || focusedView == 'solutionExplorer' && selectedSolutionExplorerNodeType == 'Folder' || focusedView == 'solutionExplorer' && selectedSolutionExplorerNodeType == 'Project'"
+  },
+  {
+    "key": "delete",
+    "command": "-csdevkit.deleteItem",
+    "when": "focusedView == 'solutionExplorer' && selectedSolutionExplorerNodeType == 'File' || focusedView == 'solutionExplorer' && selectedSolutionExplorerNodeType == 'Folder'"
   }
 ]

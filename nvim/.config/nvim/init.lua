@@ -44,6 +44,7 @@ config.lsp_servers = { -- see https://github.com/williamboman/mason-lspconfig.nv
 	-- "prismals",
 	-- "gopls",
 	"clangd",
+	"bufls",
 }
 
 config.formatter_services = {

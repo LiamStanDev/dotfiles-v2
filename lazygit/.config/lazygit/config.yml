@@ -92,7 +92,7 @@ git:
   parseEmoji: false
 
 os:
-  edit: "nvim" # use nvim float
+  edit: "nvim {{filename}}" # use nvim float
   copyToClipboardCmd: 'wl-copy' # See 'Custom Command for Copying to Clipboard' section
   editPreset: '' # see 'Configuring File Editing' section
   editAtLine: ''

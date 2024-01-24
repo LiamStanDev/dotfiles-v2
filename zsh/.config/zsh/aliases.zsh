@@ -46,3 +46,8 @@ alias d2u="source ~/.config/zsh/scripts/d2u.sh" # for whole directory file
 # alias logoff="gnome-session-quit" # need to change by the user name
 
 source "$HOME/.config/zsh/scripts/fzf-utils.sh"
+
+# k8s clusters
+alias master="ssh master@192.168.122.54"
+alias worker1="ssh worker1@192.168.122.187"
+alias worker2="ssh worker2@192.168.122.134"

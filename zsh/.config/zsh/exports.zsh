@@ -44,6 +44,9 @@ fi
 # setting local binary path
 export PATH="$PATH:$HOME/.local/bin"
 
+# snap app
+export PATH="$PATH:/snap/bin"
+
 # rust env
 export PATH="$PATH:$HOME/.cargo/env"
 

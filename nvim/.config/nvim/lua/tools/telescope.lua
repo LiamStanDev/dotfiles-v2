@@ -86,9 +86,5 @@ return function()
 	telescope.load_extension("project")
 	-- telescope.load_extension("dap")
 	telescope.load_extension("notify")
-	-- for lazygit
-	vim.cmd([[
-    autocmd BufEnter * :lua require('lazygit.utils').project_root_dir()
-    ]])
 	telescope.load_extension("lazygit")
 end
