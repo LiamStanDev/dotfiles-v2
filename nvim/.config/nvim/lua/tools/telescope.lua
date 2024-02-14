@@ -15,6 +15,7 @@ return function()
 			},
 			vimgrep_arguments = {
 				"rg",
+				"-L", -- follow symbolic links
 				"--color=never",
 				"--no-heading",
 				"--with-filename",
@@ -43,6 +44,22 @@ return function()
 			winblend = 0, -- transparency
 			path_display = { "truncate" },
 			color_devicons = true,
+			selection_strategy = "reset",
+			sorting_strategy = "ascending",
+			layout_strategy = "horizontal",
+			layout_config = {
+				horizontal = {
+					prompt_position = "bottom",
+					preview_width = 0.55,
+					results_width = 0.8,
+				},
+				vertical = {
+					mirror = false,
+				},
+				width = 0.87,
+				height = 0.80,
+				preview_cutoff = 120,
+			},
 		},
 		pickers = {
 			find_files = {

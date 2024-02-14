@@ -14,13 +14,14 @@ return function()
 				buftype = { "terminal", "quickfix" },
 			},
 		},
-		other_win_hl_color = "#e35e4f",
+		other_win_hl_color = "#C56069",
 	})
 
 	-- Unless you are still migrating, remove the deprecated commands from v1.x
 	vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 	require("neo-tree").setup({
+		-- see: https://github.com/nvim-neo-tree/neo-tree.nvim/blob/a7d6f05e57487326fd70b24195c3b7a86a88b156/lua/neo-tree/defaults.lua#L30-L31
 		close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
 		popup_border_style = "rounded",
 		enable_git_status = true,
@@ -29,6 +30,7 @@ return function()
 		open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
 		sort_case_insensitive = false, -- used when sorting files and directories in the tree
 		sort_function = nil,
+		hide_root_node = true,
 		default_component_configs = {
 			container = {
 				enable_character_fade = true,
@@ -182,7 +184,7 @@ return function()
 				},
 			},
 			follow_current_file = {
-				enabled = false, -- This will find and focus the file in the active buffer every time
+				enabled = true, -- This will find and focus the file in the active buffer every time
 				--               -- the current file is changed while the tree is open.
 				follow_current_file = { enabled = true, leave_dirs_open = true },
 			},

@@ -4,6 +4,11 @@
     "key": "ctrl+o",
     "command": "projectManager.listGitProjects#sideBarGit"
   },
+  // ------------------- whichkey ----------------
+  {
+    "key": "shift+space",
+    "command": "whichkey.show"
+  },
 
   // ------------------- navigation ----------------
   {
@@ -318,5 +323,28 @@
     "key": "delete",
     "command": "-csdevkit.deleteItem",
     "when": "focusedView == 'solutionExplorer' && selectedSolutionExplorerNodeType == 'File' || focusedView == 'solutionExplorer' && selectedSolutionExplorerNodeType == 'Folder'"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-cody.command.edit-code",
+    "when": "cody.activated && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "editor.action.triggerParameterHints",
+    "when": "editorHasSignatureHelpProvider && editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+space",
+    "command": "-editor.action.triggerParameterHints",
+    "when": "editorHasSignatureHelpProvider && editorTextFocus"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeActiveEditor"
   }
 ]
