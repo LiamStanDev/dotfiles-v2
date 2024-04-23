@@ -1,49 +1,11 @@
 return function()
 	local cmp = require("cmp")
-	local core = require("core")
-	local kind_icons = {
-		Namespace = "",
-		Text = "",
-		Method = "",
-		Function = "",
-		Constructor = "",
-		Field = "ﰠ",
-		Variable = "",
-		Class = "ﴯ",
-		Interface = "",
-		Module = "",
-		Property = "ﰠ",
-		Unit = "塞",
-		Value = "",
-		Enum = "",
-		Keyword = "",
-		Snippet = "",
-		Color = "",
-		File = "",
-		Reference = "",
-		Folder = "",
-		EnumMember = "",
-		Constant = "",
-		Struct = "פּ",
-		Event = "",
-		Operator = "",
-		TypeParameter = "",
-		Table = "",
-		Object = "",
-		Tag = "",
-		Array = "[]",
-		Boolean = "",
-		Number = "",
-		Null = "ﳠ",
-		String = "",
-		Calendar = "",
-		Watch = "",
-		Package = "",
-		Copilot = "",
-	}
+	local config = require("core.globals")
+
+	local kind_icons = config.kind_icons
 
 	local function window_setup()
-		if core.cmp_window_border == "rounded" then
+		if config.cmp_window_border == "rounded" then
 			local border_opt = {
 				border = "rounded", -- single, rounded
 				winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
@@ -53,7 +15,7 @@ return function()
 				documentation = require("cmp.config.window").bordered(border_opt),
 			}
 		end
-		if core.cmp_window_border == "single" then
+		if config.cmp_window_border == "single" then
 			local border_opt = {
 				border = "single", -- single, rounded
 				winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
@@ -74,7 +36,7 @@ return function()
 		active = true,
 		snippet = {
 			expand = function(args)
-				require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+				require("luasnip").lsp_expand(args.body)
 			end,
 		},
 		mapping = cmp.mapping.preset.insert({
@@ -82,7 +44,7 @@ return function()
 			["<C-j>"] = cmp.mapping.select_next_item(),
 			["<C-b>"] = cmp.mapping.scroll_docs(-4),
 			["<C-f>"] = cmp.mapping.scroll_docs(4),
-			["<C-p>"] = cmp.mapping.complete(),
+			["<C-/>"] = cmp.mapping.complete(),
 			["<C-c>"] = cmp.mapping.abort(),
 			["<TAB>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 		}),
@@ -102,12 +64,12 @@ return function()
 			},
 			format = function(entry, item)
 				-- Kind icons
-				item.kind = string.format("%s %s", kind_icons[item.kind], core.cmp_kind_text and item.kind or "")
+				item.kind = string.format("%s %s", kind_icons[item.kind], config.cmp_kind_text and item.kind or "")
 
 				if entry.completion_item.detail ~= nil and entry.completion_item ~= "" then
 					item.menu = entry.completion_item.detail
 				else
-					item.menu = core.cmp_kind_text and ""
+					item.menu = config.cmp_kind_text and ""
 						or ({
 							nvim_lsp = "(LSP)",
 							luasnip = "(Snippet)",
@@ -116,7 +78,7 @@ return function()
 						})[entry.source.name]
 				end
 
-				return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+				return item
 			end,
 		},
 		sources = {
@@ -143,39 +105,17 @@ return function()
 		},
 	})
 	-- nvim dap-cmp
-	cmp.setup({
-		enabled = function()
-			return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
-		end,
-	})
+	-- cmp.setup({
+	-- 	enabled = function()
+	-- 		return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
+	-- 	end,
+	-- })
 
-	cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
-		sources = {
-			{ name = "dap" },
-		},
-	})
-
-	-- nvim command line
-	cmp.setup.cmdline("/", {
-		mapping = cmp.mapping.preset.cmdline(),
-		sources = {
-			{ name = "buffer" },
-		},
-	})
-
-	cmp.setup.cmdline(":", {
-		mapping = cmp.mapping.preset.cmdline(),
-		sources = cmp.config.sources({
-			{ name = "path" },
-		}, {
-			{
-				name = "cmdline",
-				option = {
-					ignore_cmds = { "Man", "!" },
-				},
-			},
-		}),
-	})
+	-- cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+	-- 	sources = {
+	-- 		{ name = "dap" },
+	-- 	},
+	-- })
 
 	-- Add parentheses after selecting function or method
 	local cmp_autopairs = require("nvim-autopairs.completion.cmp")

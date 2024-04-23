@@ -1,4 +1,6 @@
 return function()
+    local filter_files = require("core.globals").filter_files
+
 	-- enhance neovim with neo-tree
 	-- need to set here, can't put in separate file
 	require("window-picker").setup({
@@ -165,9 +167,7 @@ return function()
 				hide_dotfiles = false,
 				hide_gitignored = false,
 				hide_hidden = false, -- only works on Windows for hidden files/directories
-				hide_by_name = {
-					--"node_modules"
-				},
+				hide_by_name = filter_files,
 				hide_by_pattern = { -- uses glob style patterns
 					--"*.meta",
 					--"*/src/*/tsconfig.json",

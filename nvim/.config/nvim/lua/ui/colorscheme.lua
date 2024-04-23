@@ -1,7 +1,6 @@
 local M = {}
 M.setup = function()
-	local g_configs = require("core")
-	local colorscheme = g_configs.colorscheme
+	local colorscheme = require("core.globals").colorscheme
 
 	-- set catppuccin first for bufferline color(can't delete)
 	-- vim.cmd("colorscheme " .. "catppuccin-mocha")
@@ -10,11 +9,6 @@ M.setup = function()
 		vim.notify("colorscheme " .. colorscheme .. " not found!")
 	else
 		vim.cmd("colorscheme " .. "onedark")
-	end
-
-	if g_configs.transparant then
-		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 	end
 end
 

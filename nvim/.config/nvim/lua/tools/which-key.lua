@@ -1,47 +1,6 @@
 return function()
 	local which_key = require("which-key")
-	local core = require("core")
-
-	which_key.setup({
-		icons = {
-			breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
-			separator = "  ", -- symbol used between a key and it's label
-			group = "+", -- symbol prepended to a group
-		},
-		operators = { gc = "Comments" },
-		popup_mappings = {
-			scroll_down = "<c-d>", -- binding to scroll down inside the popup
-			scroll_up = "<c-u>", -- binding to scroll up inside the popup
-		},
-		window = {
-			border = core.which_key_window_border, -- none, single, double, shadow
-			position = "bottom", -- bottom, top
-			margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
-			padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-			winblend = 0,
-		},
-		layout = {
-			height = { min = 4, max = 25 }, -- min and max height of the columns
-			width = { min = 20, max = 50 }, -- min and max width of the columns
-			spacing = 3, -- spacing between columns
-			align = "left", -- align columns left, center or right
-		},
-		ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
-		hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-		show_help = false, -- show help message on the command line when the popup is visible
-		show_keys = false, -- show the currently pressed key and its label as a message in the command line
-		triggers = "auto", -- automatically setup triggers
-		-- triggers = {"<leader>"} -- or specify a list manually
-		triggers_blacklist = {
-			i = { "j", "k" },
-			v = { "j", "k" },
-		},
-
-		disable = {
-			buftypes = {},
-			filetypes = { "TelescopePrompt" },
-		},
-	})
+	local config = require("core.globals")
 
 	-- normal mode
 	local opts = {
@@ -53,13 +12,18 @@ return function()
 		nowait = true, -- use `nowait` when creating keymaps
 	}
 	local mappings = {
-		["<space>"] = { "<cmd>HopWord<CR>", "Hop Word" },
 		["w"] = { "<cmd>silent! w!<CR>", "Save" }, -- Format command is from lsp/handler
 		["W"] = { "<cmd>silent! wa!<CR>", "Save all" },
+		["f"] = {
+			function()
+				require("conform").format()
+			end,
+			"Format File",
+		},
 		["q"] = { "<cmd>confirm q<CR>", "Quit" },
 		-- ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
 		["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-		["f"] = {
+		["p"] = {
 			function()
 				require("telescope.builtin").find_files(
 					require("telescope.themes").get_dropdown({ previewer = false, hidden = true })
@@ -71,32 +35,25 @@ return function()
 		["e"] = { "<cmd>Neotree toggle<CR>", "Explorer" },
 		-- ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
 		[";"] = { ":e $MYVIMRC<CR>", "Configuration" },
-		["m"] = { "<Plug>MarkdownPreviewToggle", "Markdown Preview" },
 		["v"] = { "<cmd>vsplit<CR>", "Split" },
 		r = {
 			":%s/",
 			"Find and Replace in a word",
 		},
 		b = {
-			name = "Browser show",
-			m = { "<Plug>MarkdownPreviewToggle", "Markdown Preview" },
-			l = { "<Cmd>LiveServer<CR>" },
+			name = "Buffer",
+			l = { "<cmd>vsplit<CR>", "Split Right" },
+			j = { "<cmd>hsplit<CR>", "Split Down" },
 		},
 		d = {
 			name = "Debug",
-			-- e = { "<Cmd>lua require('dapui').eval()<CR>", "Evaluate Expression" },
 			b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
 			l = { "<cmd>:Telescope dap list_breakpoints<cr>", "List Breakpoints" },
-			-- b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
 			c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
-			-- C = { "<cmd>:Telescope dap configurations<cr>", "Run To Cursor" },
 			q = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
-			-- g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
 			s = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
 			n = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
 			o = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
-			p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
-			-- t = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Dap Terminal" },
 			r = {
 				function()
 					vim.api.nvim_command("lua require'dap'.continue()")
@@ -117,12 +74,12 @@ return function()
 		-- 	d = { "<cmd>Lazy debug<cr>", "Debug" },
 		-- },
 
-		p = {
-			name = "Peek",
-			d = { "<cmd>Lspsaga peek_definition<CR>", "Peek Definition" },
-			t = { "<cmd>Lspsaga peek_type_definition<CR>", "Peek Type Definition" },
-			f = { "<cmd>Lspsaga lsp_finder<CR>", "Find..." },
-		},
+		-- p = {
+		-- 	name = "Peek",
+		-- 	d = { "<cmd>Lspsaga peek_definition<CR>", "Peek Definition" },
+		-- 	t = { "<cmd>Lspsaga peek_type_definition<CR>", "Peek Type Definition" },
+		-- 	f = { "<cmd>Lspsaga lsp_finder<CR>", "Find..." },
+		-- },
 
 		g = {
 			name = "Git",
@@ -155,6 +112,7 @@ return function()
 				"Undo Stage Hunk",
 			},
 		},
+
 		l = {
 			name = "LSP",
 			f = { "<cmd>Lspsaga finder<CR>", "Finder" },
@@ -245,6 +203,50 @@ return function()
 	local vmappings = {
 		-- ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
 	}
+
+	which_key.setup({
+		icons = {
+			breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
+			separator = "  ", -- symbol used between a key and it's label
+			group = "+", -- symbol prepended to a group
+		},
+
+		operators = { gc = "Comments" },
+
+		popup_mappings = {
+			scroll_down = "<c-f>", -- binding to scroll down inside the popup
+			scroll_up = "<c-b>", -- binding to scroll up inside the popup
+		},
+
+		window = {
+			border = config.which_key_window_border, -- none, single, double, shadow
+			position = "bottom", -- bottom, top
+			margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
+			padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
+			winblend = 0,
+		},
+		layout = {
+			height = { min = 4, max = 25 }, -- min and max height of the columns
+			width = { min = 20, max = 50 }, -- min and max width of the columns
+			spacing = 3, -- spacing between columns
+			align = "left", -- align columns left, center or right
+		},
+		ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
+		hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
+		show_help = false, -- show help message on the command line when the popup is visible
+		show_keys = false, -- show the currently pressed key and its label as a message in the command line
+		triggers = "auto", -- automatically setup triggers
+		-- triggers = {"<leader>"} -- or specify a list manually
+		triggers_blacklist = {
+			i = { "j", "k" },
+			v = { "j", "k" },
+		},
+
+		disable = {
+			buftypes = {},
+			filetypes = { "TelescopePrompt" },
+		},
+	})
 
 	which_key.register(mappings, opts)
 	which_key.register(vmappings, vopts)

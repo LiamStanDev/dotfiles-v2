@@ -19,6 +19,14 @@ return {
 		config = require("ui.lspsaga"),
 	},
 
+	-- dap ui
+	{
+		"rcarriga/nvim-dap-ui",
+		config = require("ui.dapui"),
+		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+	},
+
+	-- explore
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		event = "VeryLazy",
@@ -54,9 +62,9 @@ return {
 		},
 		config = require("ui.noice"),
 	},
+
 	{ "rcarriga/nvim-notify", event = "VeryLazy", config = require("ui.notify") },
 
 	-- toggle term
 	{ "akinsho/toggleterm.nvim", version = "*", config = require("ui.toggleterm") },
-	{ "kdheepak/lazygit.nvim" }, --toggle term with lazygit extension
 }

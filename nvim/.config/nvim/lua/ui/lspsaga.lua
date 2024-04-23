@@ -1,5 +1,5 @@
 return function()
-	local g_config = require("core")
+	local config = require("core.globals")
 
 	require("lspsaga").setup({
 		ui = {
@@ -31,7 +31,7 @@ return function()
 			},
 		},
 		symbol_in_winbar = {
-			enable = g_config.navigator_on,
+			enable = config.navigator_on,
 			separator = " ",
 			ignore_patterns = {},
 			hide_keyword = true,

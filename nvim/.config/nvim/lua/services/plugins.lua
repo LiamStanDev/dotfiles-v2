@@ -7,12 +7,7 @@ return {
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
-			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-			{
-				"Hoffs/omnisharp-extended-lsp.nvim", -- for omnisharp decompile
-				ft = "cs",
-			},
 			{
 				"ray-x/lsp_signature.nvim",
 				event = "VeryLazy",
@@ -21,7 +16,6 @@ return {
 		},
 		config = require("services.lspconfig"),
 	},
-	{ "Hoffs/omnisharp-extended-lsp.nvim", event = "LspAttach" }, -- for decompile csharp
 
 	-- formatting & linting
 	-- {
@@ -54,16 +48,9 @@ return {
 		dependencies = {
 			"jay-babu/mason-nvim-dap.nvim",
 			"theHamsta/nvim-dap-virtual-text",
-
-			{
-				"rcarriga/nvim-dap-ui",
-				config = require("ui.dapui"),
-			},
 			"mfussenegger/nvim-dap-python",
 		},
 		init = require("services.dap").init,
 		config = require("services.dap").config,
 	},
-	-- nvim lua api lsp
-	{ "folke/neodev.nvim", opts = {} },
 }

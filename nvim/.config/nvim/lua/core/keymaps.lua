@@ -10,10 +10,10 @@ local insert_mode = {
 	-- Move current line / block with Alt-j/k ala vscode.
 	["<A-k>"] = "<Esc>:m .-2<CR>==gi",
 
-	["<C-j>"] = "<C-o>j",
-	["<C-h>"] = "<C-o>h",
-	["<C-k>"] = "<C-o>k",
-	["<C-l>"] = "<C-o>l",
+	-- ["<C-j>"] = "<C-o>j",
+	-- ["<C-h>"] = "<C-o>h",
+	-- ["<C-k>"] = "<C-o>k",
+	-- ["<C-l>"] = "<C-o>l",
 }
 
 local normal_mode = {
@@ -66,8 +66,8 @@ local visual_block_mode = {
 
 local command_mode = {
 	-- navigate tab completion with <c-j> and <c-k>
-	["<C-j>"] = 'pumvisible() ? "\\<C-n>" : "\\<C-j>"',
-	["<C-k>"] = 'pumvisible() ? "\\<C-p>" : "\\<C-k>"',
+	["<C-j>"] = 'pumvisible() ? "\\<C-n>" : "\\<Tab>"',
+	["<C-k>"] = 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"',
 }
 
 for key, val in pairs(insert_mode) do

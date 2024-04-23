@@ -10,7 +10,7 @@ return function()
 		},
 	})
 
-	local servers = require("core").lsp_servers
+	local servers = require("core.globals").lsp_servers
 
 	-- connected mason and lspconfig
 	require("mason-lspconfig").setup({

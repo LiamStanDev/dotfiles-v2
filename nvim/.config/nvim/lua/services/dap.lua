@@ -22,7 +22,7 @@ M.init = function()
 end
 
 M.config = function()
-	local servers = require("core").dap_servers
+	local servers = require("core.globals").dap_servers
 
 	require("mason-nvim-dap").setup({
 		ensure_installed = servers,

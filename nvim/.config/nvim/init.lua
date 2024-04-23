@@ -1,5 +1,6 @@
 -- the core plugins
-local config = require("core")
+require("core")
+local config = require("core.globals")
 
 -- -----------------------------------------------------
 -- Register server
@@ -20,31 +21,25 @@ config.code_hight_servers = {
 	"gitignore",
 	"cpp",
 	"cmake",
-	"c_sharp",
 	"rust",
 	"sql",
 }
 
 -- lsp server for auto completion
 config.lsp_servers = { -- see https://github.com/williamboman/mason-lspconfig.nvim
-	"tsserver",
 	"html",
 	"jsonls",
 	"lua_ls",
 	"cssls",
-	-- "pylsp", -- python lsp
 	"pyright",
 	"bashls",
 	"dockerls",
 	"docker_compose_language_service",
-	-- "taplo", -- toml lsp
-	"tailwindcss",
-	"omnisharp",
+	"tsserver",
+	"taplo", -- toml lsp
 	"rust_analyzer",
-	-- "prismals",
-	-- "gopls",
+	"gopls",
 	"clangd",
-	"bufls",
 }
 
 config.formatter_services = {
@@ -56,13 +51,11 @@ config.formatter_services = {
 	typescript = { { "prettierd", "prettier" } },
 	typescriptreact = { { "prettierd", "prettier" } },
 	json = { { "prettierd", "prettier" } },
-	-- go = { "gofmt" },
+	go = { "gofmt" },
 	cpp = { "clang_format" },
 	bash = { "beautysh" },
 	zsh = { "beautysh" },
 	shell = { "beautysh" },
-	-- xml = { "xmlformat" },
-	-- cs = { "csharpier" },
 }
 
 config.linting_services = {
@@ -78,7 +71,7 @@ config.dap_servers = {
 	"cppdbg",
 	"coreclr", -- csharp
 	"codelldb",
-	-- "delve", -- go
+	"delve", -- go
 }
 
 -- -----------------------------------------------------
@@ -108,7 +101,7 @@ config.cmp_kind_text = true
 config.filter_files = {
 	".git",
 	".DS_Store",
-	".vscode",
+	-- ".vscode",
 }
 
 -- setup all plugin

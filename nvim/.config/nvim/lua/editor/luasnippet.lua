@@ -4,13 +4,6 @@ return function()
 		history = true,
 		updateevents = "TextChanged,TextChangedI",
 		delete_check_events = "TextChanged,InsertLeave",
-		-- ext_opts = {
-		-- 	[require("luasnip.util.types").choiceNode] = {
-		-- 		activt = {
-		-- 			virt_text = { { "●", "GruvboxOrange" } },
-		-- 		},
-		-- 	},
-		-- },
 	})
 
 	-- let one file can use multiple snippet sources.
@@ -22,13 +15,13 @@ return function()
 	-- key map
 	local keymap = vim.keymap.set
 	-- next
-	keymap({ "i", "s" }, "<A-.>", function()
+	keymap({ "i", "s" }, "<Tab>", function()
 		if luasnip.jumpable(1) then
 			luasnip.expand_or_jump(1)
 		end
 	end, { noremap = true, silent = true })
 	-- prev
-	keymap({ "i", "s" }, "<A-,>", function()
+	keymap({ "i", "s" }, "<S-Tab>", function()
 		if luasnip.jumpable(-1) then
 			luasnip.jump(-1)
 		end

@@ -83,25 +83,5 @@ return function()
 				enable_preview = true,
 			},
 		},
-		extensions = {
-			media_files = {
-				filetypes = { "png", "webp", "jpg", "jpeg", "svg" },
-				find_cmd = "rg",
-			},
-			fzf = {
-				fuzzy = true, -- false will only do exact matching
-				override_generic_sorter = true, -- override the generic sorter
-				override_file_sorter = true, -- override the file sorter
-				case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-			},
-			project = {},
-		},
 	})
-
-	telescope.load_extension("media_files")
-	telescope.load_extension("fzf")
-	telescope.load_extension("project")
-	-- telescope.load_extension("dap")
-	telescope.load_extension("notify")
-	telescope.load_extension("lazygit")
 end

@@ -2,7 +2,7 @@ return function()
 	require("nvim-treesitter.configs").setup({
 		highlight = { enable = true },
 		indent = { enable = true }, -- put the curser to the right indent
-		ensure_installed = require("core").code_hight_servers,
+		ensure_installed = require("core.globals").code_hight_servers,
 		auto_install = true,
 		disable = function(_, buf)
 			local max_filesize = 100 * 1024 -- 100 KB

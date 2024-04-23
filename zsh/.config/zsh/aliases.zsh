@@ -3,15 +3,9 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-if [ -f "/usr/bin/lsd" ]; then
-    alias l="lsd -l"
-    alias la="lsd -la"
-    alias lt="lsd --tree"
-else
-    echo "lsd is not installed."
-    alias l="ls -l"
-    alias la="ls -la"
-fi
+alias l="lsd -l"
+alias la="lsd -la"
+alias lt="lsd --tree"
 
 # neovim
 alias n="nvim"

@@ -17,7 +17,7 @@ export BROWSER="firefox"
 export PATH="$PATH:/usr/bin:/usr/sbin:/usr/local/bin"
 
 # npm install global path
-export NPM_CONFIG_PREFIX=~/.npm-global
+# export NPM_CONFIG_PREFIX=~/.npm-global # use nvm instead
 
 
 # pnpm
@@ -27,19 +27,6 @@ case ":$PATH:" in
     *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-# oh-my-posh
-# eval "$(oh-my-posh --init --shell zsh --config $HOME/.config/oh-my-posh/liam.omp.json)"
-
-# srarship prop (need locale UTF8)
-if [ -f /bin/starship ]; then
-    export STARSHIP_CONFIG=~/.config/starship.toml
-    eval "$(starship init zsh)"
-fi
-
-# zoxide init
-if [ -f /bin/zoxide ]; then
-    eval "$(zoxide init zsh)"
-fi
 
 # setting local binary path
 export PATH="$PATH:$HOME/.local/bin"
@@ -76,3 +63,24 @@ export PATH="$PATH:$RISCV/tools/bin:$RISCV/qemu/bin"
 # fly.io
 export FLYCTL_INSTALL="$HOME/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# oh-my-posh
+# eval "$(oh-my-posh --init --shell zsh --config $HOME/.config/oh-my-posh/liam.omp.json)"
+
+# srarship prop (need locale UTF8)
+export STARSHIP_CONFIG=~/.config/starship.toml
+eval "$(starship init zsh)"
+
+# zoxide init
+eval "$(zoxide init zsh)"
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+
+
+

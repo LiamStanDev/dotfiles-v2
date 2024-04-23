@@ -1,7 +1,12 @@
 return {
 	{
-		"s1n7ax/nvim-window-picker",
-		version = "v1.*",
+			's1n7ax/nvim-window-picker',
+			name = 'window-picker',
+			event = 'VeryLazy',
+			version = '2.*',
+			config = function()
+					require'window-picker'.setup()
+			end,
 	},
 
 	{ "famiu/bufdelete.nvim", event = "VeryLazy" },
@@ -42,22 +47,19 @@ return {
 	},
 
 	-- move
-	{
-		"phaazon/hop.nvim",
-		branch = "v2", -- optional but strongly recommended
+    {
+    'smoka7/hop.nvim',
+    version = "*",
+    opts = {
+        keys = 'etovxqpdygfblzhckisuran'
+    },
 		config = require("tools.hop"),
-	},
+},
 
 	-- telescopte
 	{
 		"nvim-telescope/telescope.nvim",
 		event = "VeryLazy",
-		dependencies = {
-			"nvim-telescope/telescope-media-files.nvim",
-			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-			"nvim-telescope/telescope-project.nvim", -- project
-			"nvim-telescope/telescope-dap.nvim",
-		},
 		config = require("tools.telescope"),
 	},
 
@@ -68,16 +70,6 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = require("tools.diffview"),
-	},
-
-	-- markdown preview
-
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		build = "cd app && npm install",
-		init = require("tools.markdown-preview"),
-		ft = { "markdown" },
 	},
 
 	-- nvim api documentation, and cmp

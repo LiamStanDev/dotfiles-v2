@@ -18,3 +18,6 @@ plug "zsh-users/zsh-syntax-highlighting"
 
 # for specific app
 source "$HOME/.config/zsh/dotnet-setup.zsh"
+
+# bun completions
+[ -s "/home/liam/.bun/_bun" ] && source "/home/liam/.bun/_bun"

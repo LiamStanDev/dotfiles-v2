@@ -1,22 +1,13 @@
--- python provider
-local conda_prefix = os.getenv("CONDA_PREFIX")
-if conda_prefix ~= nil then
-	vim.g.python_host_prog = conda_prefix .. "/bin/python"
-	vim.g.python3_host_prog = conda_prefix .. "/bin/python"
-else
-	vim.g.python_host_prog = "/usr/bin/python"
-	vim.g.python3_host_prog = "/usr/bin/python3"
-end
-
+local M = {}
 -- setup diagnostic ui
-local signs = {
+M.signs = {
 	{ name = "DiagnosticSignError", text = "" },
 	{ name = "DiagnosticSignWarn", text = "" },
 	{ name = "DiagnosticSignHint", text = "" },
 	{ name = "DiagnosticSignInfo", text = "" },
 }
 
-for _, sign in ipairs(signs) do
+for _, sign in ipairs(M.signs) do
 	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 end
 
@@ -38,3 +29,47 @@ vim.diagnostic.config({
 		prefix = "",
 	},
 })
+
+
+M.kind_icons = {
+	Namespace = "",
+	Text = "",
+	Method = "",
+	Function = "",
+	Constructor = "",
+	Field = "ﰠ",
+	Variable = "",
+	Class = "ﴯ",
+	Interface = "",
+	Module = "",
+	Property = "ﰠ",
+	Unit = "塞",
+	Value = "",
+	Enum = "",
+	Keyword = "",
+	Snippet = "",
+	Color = "",
+	File = "",
+	Reference = "",
+	Folder = "",
+	EnumMember = "",
+	Constant = "",
+	Struct = "פּ",
+	Event = "",
+	Operator = "",
+	TypeParameter = "",
+	Table = "",
+	Object = "",
+	Tag = "",
+	Array = "[]",
+	Boolean = "",
+	Number = "",
+	Null = "ﳠ",
+	String = "",
+	Calendar = "",
+	Watch = "",
+	Package = "",
+	Copilot = "",
+}
+
+return M
